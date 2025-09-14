@@ -1,0 +1,58 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+}
+
+#input-area {
+  display: flex;
+  gap: 15px;
+  flex-direction: column;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+#input-area input {
+  height: 40px;
+  padding: 5px;
+  color: blueviolet;
+  border-radius: 4px;
+  background: transparent;
+}
+
+#input-area #lookup {
+  height: 30px;
+  width: 80px;
+  background-color: blueviolet;
+  color: navajowhite;
+  border-radius: 4px;
+}
+
+.wrapper {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+@media only screen and (min-width: 768px) {
+    body {
+        font-size: 2rem;
+    }
+    
+    .wrapper {
+        width: 50%;
+    }
+    
+    #input-area input {
+       height: 60px;
+       font-size: 2rem;
+    }
+    
+    #input-area #lookup {
+       height: 50px;
+       width: 200px;
+       font-size: 2rem;
+   }
+}

@@ -1,0 +1,50 @@
+body {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+}
+
+h1 {
+  letter-spacing: 1rem;
+  text-shadow: 1px 1px 10px #0000ff;
+  text-align: center;
+}
+
+#clock-content {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin-top: 50px;
+  border: 1px solid #ddd;
+  padding: 20px;
+  box-shadow: 1px 1px 10px #0000ff;
+}
+
+#hour {
+  color: red;
+}
+
+#min {
+  color: brown;
+}
+
+#sec {
+  color: darkgreen;
+}
+
+.clock {
+  font-size: 3rem;
+}
+
+.dot {
+  color: blue;
+  font-size: 2rem;
+}
+
+.dot:last-child {
+  font-size: 14px;
+  margin-left: 20px;
+}
+

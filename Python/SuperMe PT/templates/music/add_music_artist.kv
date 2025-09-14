@@ -1,0 +1,78 @@
+#:import AddMusicArtistWindow screens.music.add_music_artist
+
+<AddMusicArtistWindow>:
+    artist_name: music_artistname_input
+    country: music_artistcountry_spinner
+    description: music_artistdesc_input
+    
+    
+    ScrollView:
+        effect_cls: ScrollEffect
+        
+	    AddEditContentContainer:
+	        BoxLayout:
+	            size_hint_y: None
+	            height: '35dp'
+	            ContentHeader:
+	                text: "ADD MUSIC ARTIST:"
+	                
+	                
+	        BoxLayout:
+	            spacing: 10
+	            padding: 10
+	            size_hint_y: None
+	            height: self.minimum_height
+	            orientation: "vertical"
+	            
+	            
+	            BuddyLabel:
+	                text: "Artist Name: *"
+	                
+	            InputTextEditNormal:
+	                id: music_artistname_input
+	                
+	                
+	            BuddyLabel:
+	                text: "Country: *"
+	                
+	            CountrySpinner:
+	                id: music_artistcountry_spinner
+	                text: "Select Country"
+	                
+	                
+	            BuddyLabel:
+	                text: "Description: *"
+	                
+	            InputTextEdit:
+	                id: music_artistdesc_input
+	                
+	                
+	        BoxLayout:
+            	size_hint_y: None
+                height: '20dp'
+                
+                
+            BoxLayout:
+                padding: 10
+                size_hint_y: None
+                height: '40dp'
+                orientation: "vertical"
+          
+                BoxLayout:
+                    spacing: 10
+                    size_hint: None, None
+                    size: '160dp', '40dp'
+                    pos_hint: {'right': 0.98, 'y': 0.20}
+                    
+                    CancelSaveButton:
+                        text: "Cancel"
+                        size_hint: None, None
+                        size: '80dp', self.parent.height
+                        on_release: root.manager.current = "addmusic"
+                  
+                    CancelSaveButton:                                                                                                                   
+                        text: "Add"
+                        size_hint: None, None
+                        size: '80dp', self.parent.height 
+                        on_release: root.add_artist()
+             

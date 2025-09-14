@@ -1,0 +1,145 @@
+#:import EditTaskWindow screens.tasks.edit_task
+
+<EditTaskWindow>:
+    task_id: task_id_label
+    task_name: task_name_input
+    categ: task_categ_spinner
+    desc: task_desc_input
+    duration: task_duration_input
+    
+    
+    ScrollView:
+        effect_cls: ScrollEffect
+        
+        
+	    AddEditContentContainer:
+	        BoxLayout:
+	            size_hint_y: None
+	            height: '35dp'
+	            ContentHeader:
+	                text: "EDIT TASK:"
+	                
+	            GeneralLabel:
+                    id: task_id_label
+                    size_hint_x: .30
+                    halign: "right"
+                    color: (0.878, 0.780, 0.918, .5)
+       
+	                   
+	        BoxLayout:
+	            spacing: 10
+	            padding: 10
+	            size_hint_y: None
+	            height: self.minimum_height
+	            orientation: "vertical"
+	            
+	            
+	            BuddyLabel:
+	                text: "Name: *"
+	                
+	            InputTextEditNormal:
+	                id: task_name_input
+	            
+	                
+	            BuddyLabel:
+	                text: "Category: *"
+	                
+	            BoxLayout:
+	                size_hint_y: None
+	                height: '35dp'
+	                GeneralCategorySpinner:
+	                    size_hint_x: .85
+	                    id: task_categ_spinner
+	                    text: "Select Category"
+	                    
+	                BuddyButton:
+	                    text: "+"
+	                    size_hint_x: .15
+	                    on_release: root.manager.current = "editaskaddcateg"
+	
+	
+	            BuddyLabel:
+	                text: "Description: *"
+	                
+	            InputTextEdit:
+	                id: task_desc_input
+	                
+	                
+	            BuddyLabel:
+	                text: "Duration: *"
+	                
+	            InputTextEditDisabled:
+	                id: task_duration_input
+	            
+	                
+	            BuddyLabel:
+	                text: "State: *"
+	            
+	            BoxLayout:
+	                size_hint_y: None
+	                height: '35dp'
+	                canvas.before:
+	                    Color:
+	                        rgba: (0.902, 0.275, 0.275, .5)
+	        
+	                    Line:
+	                        rounded_rectangle: self.x, self.y, self.width, self.height, 1
+	                        width: 1
+	                    
+	                CheckBox:
+	                    group: "status"
+	                    value: True
+	                    on_active: root.check_active_status(self, self.active, 1)
+	                
+	                GeneralLabel:
+	                    text: "Done"
+	                    font_size: 14
+	                    color: 0.514, 0.682, 0.455, 1
+	                    
+	                CheckBox:
+	                    group: "status"
+	                    on_active: root.check_active_status(self, self.active, 0)
+	                    
+	                GeneralLabel:
+	                    text: "Undone"
+	                    font_size: 14
+	                    color: 0.937, 0.533, 0.529, 1
+	                    
+	                CheckBox:
+	                    group: "status"
+	                    on_active: root.check_active_status(self, self.active, 2)
+	                    
+	                GeneralLabel:
+	                    text: "Active"
+	                    font_size: 14
+	       
+	                
+	        BoxLayout:
+            	size_hint_y: None
+                height: '20dp'
+                
+                
+            BoxLayout:
+                padding: 10
+                size_hint_y: None
+                height: '40dp'
+                orientation: "vertical"
+          
+                BoxLayout:
+                    spacing: 10
+                    size_hint: None, None
+                    size: '160dp', '40dp'
+                    pos_hint: {'right': 0.98, 'y': 0.20}
+                    
+                    CancelSaveButton:
+                        text: "Cancel"
+                        size_hint: None, None
+                        size: '80dp', self.parent.height
+                        on_release: root.manager.current = "tasks"
+                  
+                    CancelSaveButton:                                                                                                                   
+                        text: "Save"
+                        size_hint: None, None
+                        size: '80dp', self.parent.height 
+                        on_release: root.save_task()
+                

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="This is a simple todo app.">
+    <meta name="keywords" content="TODO, Todo App, Todo List, Task Manager, TASKER">
+    <meta name="author" content="Erick Njagi">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="{{ url_for ('static', filename='./font-awesome/css/font-awesome.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for ('static', filename='style.css') }}">
+    
+    <title>Todo App</title>
+</head>
+
+<body id="body">
+    <h1>Todo App</h1>
+    
+    <div id="input-area">
+        <input type="text" id="todo-text">
+        <button id="submit" onclick="addNewTask()"><i class="fa fa-plus"></i>Add</button>
+    </div>
+    
+    <div id="display-area">
+        <table id="tasks-table">
+            
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Task Name</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            
+            <tbody id="tasks-container" class="tasks-body">
+                <!-- Tasks will be displayed here -->
+            </tbody>
+        </table>
+    </div>
+    
+    <div id="task-edit-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeTaskModal()">&times;</span>
+            <label for="modal-input">Edit your task: </label>
+            <input type="text" id="modal-input" name="modal-input">
+            
+            <div id="modal-btngroup">
+                <button id="submit-modal">Okay</button>
+                <button onclick="closeTaskModal()">Cancel</button>
+            </div>
+        </div>
+    </div>
+    <script src="{{ url_for ('static', filename='script.js') }}"></script>
+</body>
+</html>

@@ -1,0 +1,44 @@
+#:import MusicWindow screens.music.music
+
+<TwoLineMusicView>:
+	IconLeftWidgetWithoutTouch:
+		icon: "playlist-music-outline"
+		
+		
+<MusicWindow>:
+    music_count: music_count
+    
+    BoxLayout:
+        orientation: "vertical"
+        BoxLayout:
+            size_hint_y: None
+        	height: '40dp'
+            MainTitleLabel:
+                text: "MUSIC:"
+                size_hint: .5, None
+        	    height: self.parent.height
+         
+            GeneralLabel:
+                id: music_count
+                font_size: "16sp"
+                size_hint: .5, None
+        	    height: self.parent.height
+                halign: "right"
+                color: (0.149, 0.867, 0.780, 1)
+                   
+               
+        MDFloatLayout:
+            MDScrollView:
+                MDList:
+                    id: music_container
+            
+            AddButtonContainer:
+                AddButton:
+                    text: "Back"
+                    icon: "arrow-left"
+                    on_release: root.manager.current = "dashboard"
+                
+                AddButton:
+                    text: "Add"
+                    icon: "plus"
+                    on_release: root.manager.current = "addmusic"

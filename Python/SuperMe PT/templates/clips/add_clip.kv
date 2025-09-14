@@ -1,0 +1,91 @@
+#:import AddClipWindow screens.clips.add_clip
+#:import ScrollEffect  kivy.effects.scroll.ScrollEffect
+
+<AddClipWindow>:
+    clip: clip_input
+    writer: clip_writer_input
+    stitle: clip_title_input
+    stype: clip_type_spinner
+    
+    ScrollView:
+        effect_cls: ScrollEffect
+        
+        
+	    AddEditContentContainer:
+	        BoxLayout:
+	            size_hint_y: None
+	            height: '35dp'
+	            ContentHeader:
+	                text: "ADD CLIP:"
+	               
+	               
+	        BoxLayout:
+	            spacing: 10
+	            padding: 10
+	            size_hint_y: None
+	            height: self.minimum_height
+	            orientation: "vertical"
+	            
+	            
+	            BuddyLabel:
+	                text: "Clip Content: *"
+	                
+	            InputTextEdit:
+	                id: clip_input
+	                hint_text: "When you want something, all the universe conspires in helping you to achieve it."
+	                
+	                
+	            BuddyLabel:
+	                text: "Writer: *"
+	                
+	            InputTextEditNormal:
+	                id: clip_writer_input
+	                hint_text: "Paul Coelho"
+	                
+	         
+	            BuddyLabel:
+	                text: "Source Type: *"
+	                  
+	            Spinner:
+	                id: clip_type_spinner
+	                text: "Select Type"
+	                values: ["Article", "Book", "Magazine", "Poem", "Audio", "Video", "Other"]
+	                  
+	                  
+	            BuddyLabel:
+	                text: "Title: *"
+	                
+	            InputTextEditNormal:
+	                id: clip_title_input
+	                hint_text: "The Alchemist"
+	                   
+	         
+	        BoxLayout:
+            	size_hint_y: None
+                height: '20dp'
+                
+                
+            BoxLayout:
+                padding: 10
+                size_hint_y: None
+                height: '40dp'
+                orientation: "vertical"
+         
+                BoxLayout:
+                    spacing: 10
+                    size_hint: None, None
+                    size: '160dp', '40dp'
+                    pos_hint: {'right': 0.98, 'y': 0.20}
+                    
+                    CancelSaveButton:
+                        text: "Cancel"
+                        size_hint: None, None
+                        size: '80dp', self.parent.height
+                        on_release: root.manager.current = "clips"
+                  
+                    CancelSaveButton:                                                                                                                   
+                        text: "Add"
+                        size_hint: None, None
+                        size: '80dp', self.parent.height 
+                        on_release: root.add_clip()
+           

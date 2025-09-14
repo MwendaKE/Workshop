@@ -1,0 +1,118 @@
+#:import AddArticleWindow screens.articles.add_article
+
+<AddArticleWindow>:
+    title: article_title_input
+    categ: article_categ_spinner
+    writer: article_writer_spinner
+    body: article_body_input
+    date_written: article_date_input
+    ref: article_ref_input
+   
+    ScrollView:
+        effect_cls: ScrollEffect
+        
+        
+	    AddEditContentContainer:
+	        BoxLayout:
+	            size_hint_y: None
+	            height: '35dp'
+	            ContentHeader:
+	                text: "ADD ARTICLE"
+	              
+	        BoxLayout:
+	            spacing: 10
+	            padding: 10
+	            size_hint_y: None
+	            height: self.minimum_height
+	            orientation: "vertical"
+	            
+	            
+	            BuddyLabel:
+	                text: "Title: *"
+	                
+	            InputTextEditNormal:
+	                id: article_title_input
+	             
+	             
+	            BuddyLabel:
+	                text: "Category: *"
+	                
+	            BoxLayout:
+	                size_hint_y: None
+	                height: '35dp'
+	                GeneralCategorySpinner:
+	                    id: article_categ_spinner
+	                    text: "Select Category"
+	                    size_hint_x: .85
+	                
+	                BuddyButton:
+	                    size_hint_x: .15
+	                    on_release: root.manager.current = "addarticlecateg"
+	                  
+	                
+	            BuddyLabel:
+	                text: "Writer: *"
+	                
+	            BoxLayout:
+	                size_hint_y: None
+	                height: '35dp'
+	                ArticleWriterSpinner:
+	                    id: article_writer_spinner
+	                    text: "Select Writer"
+	                    size_hint_x: .85
+	                
+	                BuddyButton:
+	                    size_hint_x: .15
+	                    on_release: root.manager.current = "addarticlewriter"
+	               
+	               
+	            BuddyLabel:
+	                text: "Body: *"
+	                
+	            InputTextEdit:
+	                id: article_body_input
+	             
+	             
+	            BuddyLabel:
+	                text: "Date Written: *"
+	                
+	            InputTextEditNormal:
+	                id: article_date_input   
+	                
+	                
+	            BuddyLabel:
+	                text: "References: *"
+	                
+	            InputTextEdit:
+	                id: article_ref_input
+	                
+	                
+	        BoxLayout:
+            	size_hint_y: None
+                height: '20dp'
+                
+                
+            BoxLayout:
+                padding: 10
+                size_hint_y: None
+                height: '40dp'
+                orientation: "vertical"
+          
+                BoxLayout:
+                    spacing: 10
+                    size_hint: None, None
+                    size: '160dp', '40dp'
+                    pos_hint: {'right': 0.98, 'y': 0.20}
+                    
+                    CancelSaveButton:
+                        text: "Cancel"
+                        size_hint: None, None
+                        size: '80dp', self.parent.height
+                        on_release: root.manager.current = "articles"
+                  
+                    CancelSaveButton:                                                                                                                   
+                        text: "Add"
+                        size_hint: None, None
+                        size: '80dp', self.parent.height 
+                        on_release: root.add_article()
+             

@@ -1,0 +1,62 @@
+#:import AddArticleCategWindow screens.articles.add_article_categ
+
+<AddArticleCategWindow>:
+    category: category_input
+    
+    
+    ScrollView:
+        effect_cls: ScrollEffect
+       
+         
+        AddEditContentContainer:
+            BoxLayout:
+                size_hint_y: None
+	            height: '35dp'
+                ContentHeader:
+                    text: "ADD ARTICLE CATEGORY:"
+                    
+                    
+            BoxLayout:
+                spacing: 10
+                padding: 10
+                orientation: "vertical"
+                size_hint_y: None
+	            height: self.minimum_height
+	            
+	            
+                BuddyLabel:
+                    text: "Category: *"
+              
+                InputTextEditNormal:
+                    id: category_input
+                    
+                    
+            BoxLayout:
+            	size_hint_y: None
+                height: '20dp'
+                
+                
+            BoxLayout:
+                padding: 10
+                size_hint_y: None
+                height: '40dp'
+                orientation: "vertical"
+          
+                BoxLayout:
+                    spacing: 10
+                    size_hint: None, None
+                    size: '160dp', '40dp'
+                    pos_hint: {'right': 0.98, 'y': 0.20}
+                    
+                    CancelSaveButton:
+                        text: "Cancel"
+                        size_hint: None, None
+                        size: '80dp', self.parent.height
+                        on_release: root.manager.current = "addarticle"
+                  
+                    CancelSaveButton:                                                                                                                   
+                        text: "Add"
+                        size_hint: None, None
+                        size: '80dp', self.parent.height 
+                        on_release: root.add_category()
+            

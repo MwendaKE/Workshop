@@ -1,0 +1,181 @@
+@font-face {
+  font-family: "The Strange";
+  src: url('fonts/the_strange/TheStrangeDemoRegular.ttf');
+}
+
+@font-face {
+  font-family: "Rain Flowers";
+  src: url('fonts/Rain-Flowers/RainFlowers.ttf');
+}
+
+@font-face {
+  font-family: "Bloody Hell";
+  src: url('fonts/bloody_hell/Bloody Hell.otf');
+}
+
+
+@font-face {
+  font-family: "Witch Mystery";
+  src: url('fonts/Witch-Mystery/Witch Mystery.otf');
+}
+
+@font-face {
+  font-family: "Mootchie";
+  src: url('fonts/Mootchie/Mootchie PERSONAL USE ONLY!.ttf');
+}
+
+
+@font-face {
+  font-family: "WickedSick";
+  src: url('fonts/wicked_sick/WickedSick.ttf');
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Inter", sans-serif;
+}
+
+body {
+  margin: 10px;
+  padding: 10px;
+  /*background-image: url('../static/other/bg-image.jpg');*/
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+p:first-letter {
+  font-size: 1.5rem;
+  font-family: "Rain Flowers";
+}
+
+.fa {
+  padding-right: 10px;
+  color: beige;
+}
+
+.header-container {
+  padding: 20px;
+  position: sticky;
+  top: 0;
+  background-color: white;
+  z-index: 1000;
+  border-radius: 10px;
+}
+
+.memoirs-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  min-height: 100vh;
+  position: relative;
+}
+
+.add-memoir-btn {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  font-size: 2rem;
+  text-align: center;
+  color: beige;
+  position: fixed;
+  right: 40px;
+  bottom: 40px;
+  z-index: 1000;
+}
+
+.add-memoir-btn .fa {
+  margin-left: 8px;
+}
+
+h1 {
+  font-family: "The Strange";
+  font-size: 4rem;
+  text-shadow: 0 0 15px deeppink;
+  font-weight: lighter;
+}
+
+h2, h4 {
+  font-family: "The Strange";
+  color: deeppink;
+  font-weight: lighter;
+}
+
+h3 {
+  font-family: "WickedSick";
+  color: deeppink;
+  font-weight: lighter;
+}
+
+h5 {
+  font-family: "Rain Flowers";
+  color: deeppink;
+}
+
+h6 {
+  font-size: 1.1rem;
+}
+
+ul, ol {
+  margin-left: 20px;
+  color: gray;
+}
+
+li {
+  line-height: 1.5rem;
+}
+
+button {
+  height: 2.5rem;
+  width: 100px;
+  background-color: deeppink;
+  border: none;
+  border-radius: 15px;
+  color: white;
+}
+
+button:hover {
+  transform: scale(1.05);
+  transition: transform 0.3s ease-in-out;
+}
+
+.memoirs-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  position: relative;
+  /*backdrop-filter: blur(100px);*/
+}
+
+.memoirs-container small {
+  color: gray;
+}
+
+.memoir-item {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 10px;
+  border: 1px solid deeppink;
+  border-radius: 10px;
+  box-shadow: -1px 1px 1px deeppink;
+}
+
+.memoir-item:hover {
+  transform: skewY(1deg);
+  border: 1px solid black;
+  box-shadow: -1px 1px 2px black;
+}
+
+.memoirs-container a {
+  font-family: "The Strange";
+  font-size: 1.8rem;
+  color: deeppink;
+  text-decoration: none;
+  font-weight: normal;
+}

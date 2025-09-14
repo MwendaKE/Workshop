@@ -1,0 +1,104 @@
+#:import EditDiaryWindow screens.diaries.edit_diary_entry
+
+<EditDiaryWindow>:
+    diary_id: diary_id_label
+    title: diary_title_input
+    categ: diary_categ_spinner
+    mood: diary_mood_spinner
+    desc: diary_desc_input
+    
+    
+    ScrollView:
+        effect_cls: ScrollEffect
+        
+        
+	    AddEditContentContainer:
+	        BoxLayout:
+	            size_hint_y: None
+	            height: '35dp'
+	            ContentHeader:
+	                text: "EDIT DIARY ENTRY:"
+	                
+	            GeneralLabel:
+                    id: diary_id_label
+                    size_hint_x: .30
+                    halign: "right"
+                    color: (0.878, 0.780, 0.918, .5)
+       
+  
+	        BoxLayout:
+	            spacing: 10
+	            padding: 10
+	            size_hint_y: None
+	            height: self.minimum_height
+	            orientation: "vertical"
+	            
+	            
+	            BuddyLabel:
+	                text: "Title: *"
+	                
+	            InputTextEditNormal:
+	                id: diary_title_input
+	              
+	              
+	            BuddyLabel:
+	                text: "Category: *"
+	                
+	            BoxLayout:
+	                size_hint_y: None
+	                height: '35dp'
+	                GeneralCategorySpinner:
+	                    size_hint_x: .85
+	                    id: diary_categ_spinner
+	                    text: "Select Category"
+	                    
+	                BuddyButton:
+	                    size_hint_x: .15
+	                    on_release: root.manager.current = "editdiaryaddcateg"
+	              
+	              
+	            BuddyLabel:
+	                text: "Mood: *"
+	                
+	            Spinner:
+	                id: diary_mood_spinner
+	                text: "Select Mood"
+	                values: ["Happy", "Sad", "Confused", "Other"]
+	                   
+	                     
+	            BuddyLabel:
+	                text: "Description: *"
+	                
+	            InputTextEdit:
+	                id: diary_desc_input
+	                
+	                
+	        BoxLayout:
+            	size_hint_y: None
+                height: '20dp'
+                
+                
+            BoxLayout:
+                padding: 10
+                size_hint_y: None
+                height: '40dp'
+                orientation: "vertical"
+          
+                BoxLayout:
+                    spacing: 10
+                    size_hint: None, None
+                    size: '160dp', '40dp'
+                    pos_hint: {'right': 0.98, 'y': 0.20}
+                    
+                    CancelSaveButton:
+                        text: "Cancel"
+                        size_hint: None, None
+                        size: '80dp', self.parent.height
+                        on_release: root.manager.current = "diaryview"
+                  
+                    CancelSaveButton:                                                                                                                   
+                        text: "Add"
+                        size_hint: None, None
+                        size: '80dp', self.parent.height 
+                        on_release: root.save_entry()
+             

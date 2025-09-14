@@ -1,0 +1,113 @@
+#:import SideMenu screens.other.sidemenu
+      
+<SideMenu>:  
+    MDNavigationDrawerMenu:
+        MDNavigationDrawerHeader:
+            title: "S U P E R M E"
+            title_font_style: "H6"
+            title_color: "#EAC155"
+            
+        MDNavigationDrawerLabel:
+            text: "APPLICATION"
+                    
+        NavItem:
+            icon: "book-open-outline"
+            text: "Books"
+            right_text: root.get_books_count()
+                    
+        NavItem:
+            icon: "playlist-music-outline"
+            text: "Music"
+            right_text: root.get_music_count()
+                    
+        NavItem:
+            icon: "comment-quote-outline"
+            text: "Quotes"
+            right_text: root.get_quotes_count()
+                    
+        NavItem:
+            icon: "av-timer"
+            text: "Diaries"
+            right_text: root.get_diaries_count()
+                    
+        NavItem:
+            icon: "heart-multiple-outline"
+            text: "Poems"
+            right_text: root.get_poems_count()
+                    
+        NavItem:
+            icon: "receipt-text-outline"
+            text: "Tasks"
+            right_text: root.get_tasks_count()
+                    
+        NavItem:
+            icon: "earth"
+            text: "Articles"
+            right_text: root.get_articles_count()
+                    
+        NavItem:
+            icon: "calendar-month-outline"
+            text: "Events"
+            right_text: root.get_events_count()
+                    
+        NavItem:
+            icon: "content-cut"
+            text: "Clips"
+            right_text: root.get_clips_count()
+                    
+        MDNavigationDrawerDivider:
+                 
+        #---PEOPLE---
+                   
+        MDNavigationDrawerLabel:
+            text: "PEOPLE"
+                    
+        NavItem:
+            icon: "account-group-outline"
+            text: "Authors"
+            right_text: root.get_authors_count()
+            on_press: root.current = "authors"
+                
+        NavItem:
+            icon: "account-cowboy-hat-outline"
+            text: "Artists"
+            right_text: root.get_artists_count()
+            
+        NavItem:
+            icon: "account-heart-outline"
+            text: "Poets"
+            right_text: root.get_poets_count()
+            
+        NavItem:
+            icon: "account-edit-outline"
+            text: "Writers"
+            right_text: root.get_writers_count()
+          
+          
+        MDNavigationDrawerDivider:
+            
+        #----HELPERS---
+     
+        MDNavigationDrawerLabel:
+            text: "HELPERS"
+                      
+        NavItem:
+            icon: "select-group"
+            text: "Categories"
+            right_text: root.get_categs_count()
+            
+        NavItem:
+            icon: "view-agenda-outline"
+            text: "Genres"
+            right_text: root.get_genres_count()
+                    
+        MDNavigationDrawerDivider:
+                    
+        MDNavigationDrawerLabel:
+            text: "OTHER"
+                    
+        NavItem:
+            icon: "information-outline"
+            text: "About"
+                    
+                                                                                           

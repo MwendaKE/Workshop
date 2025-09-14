@@ -1,0 +1,508 @@
+#:kivy 1.0
+
+#:import NoTransition kivy.uix.screenmanager.FadeTransition
+#:import ScreenManager kivy.uix.screenmanager
+
+
+#-- OTHER --
+
+#:include ./templates/other/helpers.kv
+#:include ./templates/other/dashboard.kv
+#:include ./templates/other/search_scrn.kv
+
+
+#-- BOOKS --
+
+#:include ./templates/books/books.kv
+#:include ./templates/books/add_book.kv
+#:include ./templates/books/add_book_author.kv
+#:include ./templates/books/add_book_categ.kv
+#:include ./templates/books/book_view.kv
+#:include ./templates/books/edit_book.kv
+#:include ./templates/books/edit_book_add_categ.kv
+#:include ./templates/books/edit_book_add_author.kv
+
+
+#-- MUSIC --
+
+#:include ./templates/music/music.kv
+#:include ./templates/music/add_music.kv
+#:include ./templates/music/add_music_artist.kv
+#:include ./templates/music/add_music_genre.kv
+#:include ./templates/music/music_view.kv
+#:include ./templates/music/edit_music.kv
+#:include ./templates/music/edit_music_add_artist.kv
+#:include ./templates/music/edit_music_add_genre.kv
+
+#-- DIARIS --
+
+#:include ./templates/diaries/diaries.kv
+#:include ./templates/diaries/add_diary_categ.kv
+#:include ./templates/diaries/diary_view.kv
+#:include ./templates/diaries/edit_diary_entry.kv
+#:include ./templates/diaries/edit_diary_entry_add_categ.kv
+#:include ./templates/diaries/add_diary_entry.kv
+
+
+#-- QUOTES --
+
+#:include ./templates/quotes/quotes.kv
+#:include ./templates/quotes/add_quote.kv
+#:include ./templates/quotes/add_quote_author.kv
+#:include ./templates/quotes/add_quote_categ.kv
+
+
+#-- TASKS --
+
+#:include ./templates/tasks/tasks.kv
+#:include ./templates/tasks/add_task.kv
+#:include ./templates/tasks/add_task_categ.kv
+#:include ./templates/tasks/task_view.kv
+#:include ./templates/tasks/edit_task.kv
+#:include ./templates/tasks/edit_task_add_categ.kv
+
+#-- EVENTS --
+
+#:include ./templates/events/events.kv
+#:include ./templates/events/add_event.kv
+#:include ./templates/events/edit_event.kv
+#:include ./templates/events/event_view.kv
+
+#-- POEMS --
+
+#:include ./templates/poems/poems.kv
+#:include ./templates/poems/add_poem.kv
+#:include ./templates/poems/add_poem_author.kv
+#:include ./templates/poems/poem_view.kv
+
+#-- ARTICLES --
+
+#:include ./templates/articles/articles.kv
+#:include ./templates/articles/add_article.kv
+#:include ./templates/articles/add_article_categ.kv
+#:include ./templates/articles/add_article_writer.kv
+#:include ./templates/articles/article_view.kv
+
+
+#-- CLIPS --
+
+#:include ./templates/clips/clips.kv
+#:include ./templates/clips/add_clip.kv
+
+
+
+#-- MENU --
+
+#:include ./templates/menu/sidemenu.kv
+#:include ./templates/menu/authors.kv
+#:include ./templates/menu/artists.kv
+#:include ./templates/menu/poets.kv
+#:include ./templates/menu/writers.kv
+#:include ./templates/menu/categories.kv
+#:include ./templates/menu/genres.kv
+
+#:include ./templates/menu/author_view.kv
+#:include ./templates/menu/artist_view.kv
+#:include ./templates/menu/poet_view.kv
+#:include ./templates/menu/writer_view.kv
+
+#:include ./templates/menu/add_author.kv
+#:include ./templates/menu/add_artist.kv
+#:include ./templates/menu/add_poet.kv
+#:include ./templates/menu/add_writer.kv
+#:include ./templates/menu/about.kv
+
+
+MDBoxLayout:
+    orientation: "vertical"
+           
+    MDNavigationLayout: 
+        MDTopAppBar:
+            size_hint: 1, 0.08
+            pos_hint: {'top': 1}
+            md_bg_color: "#111111"
+            elevation: 3
+            padding: 0
+            
+            MDBoxLayout:
+                size_hint: None, None
+                size: self.parent.size
+                padding: 0
+                
+                MDIconButton:
+                    icon: "menu"
+                    icon_color: "#E64646"
+                    size_hint: 0.15, 1
+                    on_release: app.open_side_menu()
+                
+                MDLabel:
+                    text: "S U P E R M E"
+                    size_hint: 0.70, 1
+                    font_name: "./assets/fonts/SecretsStencil.ttf"
+                    font_size: "22sp"
+                    color: (0.902, 0.275, 0.275, 1)
+                    
+                MDIconButton:
+                    icon: "magnify"
+                    size_hint: 0.15, 1
+                    icon_color: "#E64646"
+                    on_release: app.open_search_window()
+            
+        
+        ScreenManager:
+            size_hint:1, 0.92
+            id: manager
+            
+        MDNavigationDrawer:
+            id: side_menu
+            
+            MenuContentDrawer:
+            
+                                                                                                                                                                                                                                                                                                                                
+<ScreenManager>:
+    id: manager
+    transition: NoTransition()
+
+    DashboardWindow:
+        id: dashboard
+        name: "dashboard"
+        manager: manager
+        
+    SearchWindow:
+        id: searchquery
+        name: "searchquery"
+        manager: manager
+        
+        
+    #-----MENU------
+       
+    AuthorsWindow:
+        id: authors
+        name: "authors"
+        manager: manager
+        
+    ArtistsWindow:
+        id: artists
+        name: "artists"
+        manager: manager
+        
+    PoetsWindow:
+        id: poets
+        name: "poets"
+        manager: manager
+        
+    WritersWindow:
+        id: writers
+        name: "writers"
+        manager: manager
+        
+    CategoryWindow:
+        id: categories
+        name: "categories"
+        manager: manager
+        
+    GenreWindow:
+        id: genres
+        name: "genres"
+        manager: manager
+        
+    AuthorViewWindow:
+        id: authorview
+        name: "authorview"
+        manager: manager
+        
+    ArtistViewWindow:
+        id: artistview
+        name: "artistview"
+        manager: manager
+        
+    PoetViewWindow:
+        id: poetview
+        name: "poetview"
+        manager: manager
+        
+    WriterViewWindow:
+        id: writerview
+        name: "writerview"
+        manager: manager
+        
+    AddAuthorWindow:
+        id: addauthor
+        name: "addauthor"
+        manager: manager
+        
+    AddArtistWindow:
+        id: addartist
+        name: "addartist"
+        manager: manager
+        
+    AddPoetWindow:
+        id: addpoet
+        name: "addpoet"
+        manager: manager
+        
+    AddWriterWindow:
+        id: addwriter
+        name: "addwriter"
+        manager: manager
+        
+    AboutWindow:
+        id: about
+        name: "about"
+        manager: manager
+        
+    
+    #-----BOOK------
+    
+    BooksWindow:
+        id: books
+        name: "books"
+        manager: manager
+        
+    AddBookWindow:
+        id: addbook
+        name: "addbook"
+        manager: manager 
+        
+    AddAuthorBookWindow:
+        id: add_book_author
+        name: "addbkauthor"
+        manager: manager
+        
+    AddBookCategWindow:
+        id: add_category
+        name: "addbookcateg"
+        manager: manager
+        
+    BookViewWindow:
+        id: bookview
+        name: "bookview"
+        manager: manager
+        
+    EditBookWindow:
+        id: editbook
+        name: "editbook"
+        manager: manager
+        
+    EditBookAddCategoryWindow:
+        id: editbookaddcateg
+        name: "editbookaddcateg"
+        manager: manager
+        
+    EditBookAddAuthorWindow:
+        id: editbookaddauthor
+        name: "editbookaddauthor"
+        manager: manager
+        
+    #-----MUSIC------  
+   
+    MusicWindow:
+        id: music
+        name: "music"
+        manager: manager
+          
+    MusicViewWindow:
+        id: songviewindow
+        name: "songview"
+        manager: manager
+        
+    AddMusicWindow:
+        id: addmusic
+        name: "addmusic"
+        manager: manager
+        
+    AddMusicArtistWindow:
+        id: addmusicartist
+        name: "addmusicartist"
+        manager: manager
+        
+    AddMusicGenreWindow:
+        id: addmusicgenre
+        name: "addmusicgenre"
+        manager: manager
+        
+    EditMusicWindow:
+        id: editmusic
+        name: "editmusic"
+        manager: manager
+        
+    EditMusicAddArtistWindow:
+        id: editmusicaddartist
+        name: "editmusicaddartist"
+        manager: manager
+        
+    EditMusicAddGenreWindow:
+        id: editmusicaddgenre
+        name: "editmusicaddgenre"
+        manager: manager
+        
+    #-----TASKS------  
+        
+    TasksWindow:
+        id: tasks
+        name: "tasks"
+        manager: manager
+        
+    AddTaskWindow:
+        id: addtask
+        name: "addtask"
+        manager: manager
+        
+    AddTaskCategWindow:
+        id: addtaskcateg
+        name: "addtaskcateg"
+        manager: manager
+        
+    TaskViewWindow:
+        id: taskview
+        name: "taskview"
+        manager: manager
+        
+    EditTaskWindow:
+        id: editask
+        name: "editask"
+        manager: manager
+        
+    EditTaskAddCategoryWindow:
+        id: editaskaddcateg
+        name: "editaskaddcateg"
+        manager: manager
+        
+    #-----DIARY------  
+        
+    DiariesWindow:
+        id: diaries
+        name: "diaries"
+        manager: manager 
+    
+    AddDiaryWindow:
+        id: addiary
+        name: "addiary"
+        manager: manager
+        
+    AddDiaryCategWindow:
+        id: addiarycateg
+        name: "addiarycateg"
+        manager: manager
+        
+    DiaryViewWindow:
+        id: diaryview
+        name: "diaryview"
+        manager: manager
+        
+    EditDiaryWindow:
+        id: editdiaryentry
+        name: "editdiaryentry"
+        manager: manager
+        
+    EditDiaryAddCategoryWindow:
+        id: editdiaryaddcateg
+        name: "editdiaryaddcateg"
+        manager: manager
+        
+    #-----QUOTES------ 
+    
+    QuotesWindow:
+        id: quotes     
+        name: "quotes"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   
+        manager: manager 
+        
+    AddQuoteWindow:
+        id: addscreen
+        name: "addquote"
+        manager: manager 
+        
+    AddQuoteAuthorWindow:
+        id: addquoteauthor
+        name: "addquoteauthor"
+        manager: manager
+        
+    AddQuoteCategWindow:
+        id: addquotecateg
+        name: "addquotecateg"
+        manager: manager
+     
+    #-----EVENTS------
+    
+    EventsWindow:
+        id: events
+        name: "events"
+        manager: manager 
+        
+    AddEventWindow:
+        id: addevent
+        name: "addevent"
+        manager: manager 
+        
+    EditEventWindow:
+        id: editevent
+        name: "editevent"
+        manager: manager
+        
+    EventViewWindow:
+        id: eventview
+        name: "eventview"
+        manager: manager
+        
+    #-----POEMS------
+    
+    PoemWindow:
+        id: poems
+        name: "poems"
+        manager: manager
+        
+    PoemViewWindow:
+        id: poemview
+        name: "poemview"
+        manager: manager
+        
+    AddPoemWindow:
+        id: addpoem
+        name: "addpoem"
+        manager: manager 
+        
+    AddPoemAuthorWindow:
+        id: addpoemauthor
+        name: "addpoemauthor"
+        manager: manager 
+        
+    
+    #-----ARTICLES------
+    
+    ArticleWindow:
+        id: articles
+        name: "articles"
+        manager: manager 
+        
+    AddArticleWindow:
+        id: addarticle
+        name: "addarticle"
+        manager: manager 
+        
+    AddArticleCategWindow:
+        id: addarticlecateg
+        name: "addarticlecateg"
+        manager: manager 
+        
+    AddArticleWriterWindow
+        id: addarticlewriter
+        name: "addarticlewriter"
+        manager: manager 
+        
+    ArticleViewWindow:
+        id: articleview
+        name: "articleview"
+        manager: manager 
+        
+    #-----CLIPS----
+    
+    ClipsWindow:
+        id: clips
+        name: "clips"
+        manager: manager 
+        
+    AddClipWindow:
+        id: addclip
+        name: "addclip"
+        manager: manager 
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         

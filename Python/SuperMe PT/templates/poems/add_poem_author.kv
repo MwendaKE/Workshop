@@ -1,0 +1,78 @@
+#:import AddPoemAuthorWindow screens.poems.add_poem_author
+
+<AddPoemAuthorWindow>:
+    author_name: poem_authorname_input
+    country: poem_authorcountry_spinner
+    description: poem_authordesc_input
+    
+    
+    ScrollView:
+        effect_cls: ScrollEffect
+        
+        
+	    AddEditContentContainer:
+	        BoxLayout:
+	            size_hint_y: None
+	            height: '35dp'
+	            ContentHeader:
+	                text: "ADD POET:"
+	               
+	        BoxLayout:
+	            padding: 10
+	            spacing: 10
+	            size_hint_y: None
+	            height: self.minimum_height
+	            orientation: "vertical"
+	            
+	            
+	            BuddyLabel:
+	                text: "Poet Name: *"
+	                
+	            InputTextEditNormal:
+	                id: poem_authorname_input
+	                
+	                
+	            BuddyLabel:
+	                text: "Country: *"
+	                
+	            CountrySpinner:
+	                id: poem_authorcountry_spinner
+	                text: "Select Country"
+	                
+	                
+	            BuddyLabel:
+	                text: "Description: *"
+	                
+	            InputTextEdit:
+	                id: poem_authordesc_input
+	                
+	                
+	        BoxLayout:
+            	size_hint_y: None
+                height: '20dp'
+                
+                
+            BoxLayout:
+                padding: 10
+                size_hint_y: None
+                height: '40dp'
+                orientation: "vertical"
+         
+                BoxLayout:
+                    spacing: 10
+                    size_hint: None, None
+                    size: '160dp', '40dp'
+                    pos_hint: {'right': 0.98, 'y': 0.20}
+                    
+                    CancelSaveButton:
+                        text: "Cancel"
+                        size_hint: None, None
+                        size: '80dp', self.parent.height
+                        on_release: root.manager.current = "addpoem"
+                  
+                    CancelSaveButton:                                                                                                                   
+                        text: "Save"
+                        size_hint: None, None
+                        size: '80dp', self.parent.height 
+                        on_release: root.add_poem_author()
+            

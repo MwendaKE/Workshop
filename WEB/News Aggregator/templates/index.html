@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="A news aggregation app by Erick Njagi">
+    <meta name="keywords" content="news, search, articles, world news">
+    <meta name="author" content="Erick Njagi">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='news.css') }}">
+    
+    <title>NEWS APP</title>
+</head>
+
+<body id="body">
+    <!-- HEADER -->
+    <div class="news-container">
+        <h1>NEWS APP</h1>
+        <div class="search-area">
+            <input type="text" id="search-query" placeholder="Enter what you want to search...">
+            <button id="submit" onclick="searchAndDisplayNews()">Search</button>
+        </div>
+        
+        <div id="display-area" class="display-container">
+            <!-- NEWS WILL BE DISPLAYED HERE -->
+        </div>
+    </div>
+    
+    <script src="{{ url_for('static', filename='news.js') }}"></script>
+</body>
+</html>

@@ -1,0 +1,160 @@
+#:import AddBookWindow screens.books.add_book
+
+<AddBookWindow>:
+    author: book_author_spinner
+    title: book_title_input
+    category: book_category_spinner
+    review: book_review_input
+    about: book_about_input
+    isbn: book_isbn_input
+    
+    
+    ScrollView:
+        effect_cls: ScrollEffect
+        
+        
+	    AddEditContentContainer:
+	        BoxLayout:
+	            size_hint_y: None
+                height: '35dp'
+	            ContentHeader:
+	                text: "ADD BOOK:"
+	         
+	         
+	        BoxLayout:
+	            spacing: 10
+	            padding: 10
+	            size_hint_y: None
+	            height: self.minimum_height
+	            orientation: "vertical"
+	            
+	                    
+	            BuddyLabel:
+	                text: "Book Title: *"
+	         
+	            InputTextEditNormal:
+	                id: book_title_input
+	              
+	             
+	            BuddyLabel:
+	                text: "Author: *"
+	               
+	            BoxLayout:
+	                size_hint_y: None
+	                height: '35dp'
+	                BooksAuthorSpinner:
+	                    id: book_author_spinner
+	                    size_hint_x: .85
+	                    text: "Select Author"
+	         
+	                BuddyButton:
+	                    size_hint_x: .15
+	                    on_release: root.manager.current = "addbkauthor"
+	                  
+	            
+	            BuddyLabel:
+	                text: "Category: *"
+	         
+	            BoxLayout:
+	                size_hint_y: None
+	                height: '35dp'
+	                GeneralCategorySpinner:
+	                    id: book_category_spinner
+	                    text: "Select Category"
+	                    size_hint_x: .85
+	             
+	                BuddyButton:
+	                    size_hint_x: .15
+	                    on_release: root.manager.current = "addbookcateg"
+	             
+	             
+	            BuddyLabel:
+	                text: "State: *"
+	               
+	            BoxLayout:
+	                size_hint_y: None
+	                height: '35dp'
+	                canvas.before:
+	                    Color:
+	                        rgba: (0.902, 0.275, 0.275, .5)
+	        
+	                    Line:
+	                        rounded_rectangle: self.x, self.y, self.width, self.height, 1
+	                        width: 1
+	                    
+	                CheckBox:
+	                    group: "read_status"
+	                    value: True
+	                    on_active: root.check_read_status(self, self.active, 1)
+	                
+	                GeneralLabel:
+	                    text: "Read"
+	                    font_size: 14
+	                    
+	                CheckBox:
+	                    group: "read_status"
+	                    on_active: root.check_read_status(self, self.active, 0)
+	                    
+	                GeneralLabel:
+	                    text: "Unread"
+	                    font_size: 14
+	                    
+	                CheckBox:
+	                    group: "read_status"
+	                    on_active: root.check_read_status(self, self.active, 2)
+	                    
+	                GeneralLabel:
+	                    text: "Reading"
+	                    font_size: 14
+	            
+	            
+	            BuddyLabel:
+	                text: "Book Review: *"
+	           
+	            InputTextEdit:
+	                id: book_review_input
+	                
+	                
+	            BuddyLabel:
+	                text: "About Book: *"
+	         
+	            InputTextEdit:
+	                id: book_about_input
+	                
+	      
+	            BuddyLabel:
+	                text: "ISBN: *"
+	                
+	            InputTextEditNormal:
+	                id: book_isbn_input
+	                
+	                
+	        BoxLayout:
+            	size_hint_y: None
+                height: '20dp'
+                
+                
+            BoxLayout:
+                padding: 10
+                size_hint_y: None
+                height: '40dp'
+                orientation: "vertical"
+          
+                BoxLayout:
+                    spacing: 10
+                    size_hint: None, None
+                    size: '160dp', '40dp'
+                    pos_hint: {'right': 0.98, 'y': 0.20}
+                    
+                    CancelSaveButton:
+                        text: "Cancel"
+                        size_hint: None, None
+                        size: '80dp', self.parent.height
+                        on_release: root.manager.current = "books"
+                  
+                    CancelSaveButton:                                                                                                                   
+                        text: "Add"
+                        size_hint: None, None
+                        size: '80dp', self.parent.height 
+                        on_release: root.add_book()
+   

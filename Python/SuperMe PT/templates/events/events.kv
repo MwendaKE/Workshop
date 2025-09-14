@@ -1,0 +1,44 @@
+#:import EventsWindow screens.events.events
+
+
+<ThreeLineEventView>:
+	IconLeftWidgetWithoutTouch:
+		icon: "calendar-month-outline"
+		
+		
+<EventsWindow>:
+    MDBoxLayout:
+        orientation: "vertical"
+        MDBoxLayout:
+            size_hint_y: None
+        	height: '40dp'
+            MainTitleLabel:
+                text: "EVENTS"
+                size_hint: .5, None
+        	    height: self.parent.height
+            
+            GeneralLabel:
+                id: events_count
+                font_size: "16sp"
+                size_hint: .5, None
+        	    height: self.parent.height
+                halign: "right"
+                color: (0.149, 0.867, 0.780, 1)
+       
+       
+        MDFloatLayout:
+            MDScrollView:
+                MDList:
+                    id: events_container
+            
+            AddButtonContainer:
+                AddButton:
+                    text: "Back"
+                    icon: "arrow-left"
+                    on_release: root.manager.current = "dashboard"
+                
+                AddButton:
+                    text: "Add"
+                    icon: "plus"
+                    on_release: root.manager.current = "addevent"
+                    

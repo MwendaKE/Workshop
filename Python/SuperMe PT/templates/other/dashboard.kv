@@ -1,0 +1,168 @@
+#:import CarouselWidget screens.other.dashboard
+
+<DashboardWindow@Screen>:
+    MDBoxLayout:
+        orientation: "vertical"
+        padding: 15
+        spacing: 10
+        MDBoxLayout:
+            orientation: "vertical"
+            size_hint: 1, 0.4
+            
+            CarouselWidget:
+                id: carousel
+                direction: "right"
+                size_hint: self.size_hint
+                background_color: (0, 0, 0, 0.5)
+                loop: True
+ 
+            SeparatorHorz:
+            
+            
+        MDBoxLayout:
+            orientation: "vertical"
+            size_hint: 1, 0.6
+            padding: ["5dp", "10dp", "5dp", "20dp"]
+            BoxLayout:
+                spacing: 15
+                
+                DashButton:
+                    size_hint: .5, .5
+                    on_release: root.manager.current = "books"
+                   	     
+                    BoxLayout:
+                        orientation: "vertical"
+                        spacing: "20dp"
+                        DashIcon:
+                   	     icon: "book-open-outline"
+                   	     pos_hint: {"center_x": .5} 
+                   	
+                        DashLabel:
+                            text: "Books"
+                            
+                   
+                DashButton:
+                    size_hint: .5, .5
+                    on_release: root.manager.current = "music"
+                    	    
+                    BoxLayout:
+                    	orientation: "vertical"
+                    	spacing: "20dp"
+                        DashIcon:
+                    	    icon: "playlist-music-outline"
+                    	    pos_hint: {"center_x": .5} 
+                    	
+                        DashLabel:
+                            text: "Music"
+                            
+                            
+                DashButton:
+                    size_hint: .5, .5 
+                    on_release: root.manager.current = "quotes"
+                    	     
+                    BoxLayout:
+                    	orientation: "vertical"
+                    	spacing: "20dp"
+                        DashIcon:
+                    	    icon: "comment-quote-outline"
+                    	    pos_hint: {"center_x": .5} 
+                    	
+                        DashLabel:
+                            text: "Quotes"
+                            
+                    
+            BoxLayout:
+                spacing: 15
+                
+                DashButton:
+                    size_hint: .5, .5
+                    on_release: root.manager.current = "diaries"
+                    	    
+                    BoxLayout:
+                    	orientation: "vertical"
+                    	spacing: "20dp"
+                        DashIcon:
+                    	    icon: "av-timer"
+                    	    pos_hint: {"center_x": .5} 
+                    	
+                        DashLabel:
+                            text: "Diary"
+                            
+                             
+                DashButton:
+                    size_hint: .5, .5
+                    on_release: root.manager.current = "clips"
+                    	    
+                    BoxLayout:
+                    	orientation: "vertical"
+                    	spacing: "20dp"
+                        DashIcon:
+                    	    icon: "content-cut"
+                    	    pos_hint: {"center_x": .5} 
+                    	
+                        DashLabel:
+                            text: "Clips"
+                            
+                            
+                DashButton:
+                    size_hint: .5, .5
+                    on_release: root.manager.current = "poems"
+                    	    
+                    BoxLayout:
+                    	orientation: "vertical"
+                    	spacing: "20dp"
+                        DashIcon:
+                    	    icon: "heart-multiple-outline"
+                    	    pos_hint: {"center_x": .5} 
+                    	
+                        DashLabel:
+                            text: "Poems"
+                            
+                            
+            BoxLayout:
+                spacing: 15
+                
+                DashButton:
+                    size_hint: .5, .5
+                    on_release: root.manager.current = "tasks"
+                    	    
+                    BoxLayout:
+                    	orientation: "vertical"
+                    	spacing: "20dp"
+                        DashIcon:
+                    	    icon: "receipt-text-outline"
+                    	    pos_hint: {"center_x": .5} 
+                    	
+                        DashLabel:
+                            text: "Tasks"
+                            
+                            
+                DashButton:
+                    size_hint: .5, .5
+                    on_release: root.manager.current = "articles"
+                    	    
+                    BoxLayout:
+                    	orientation: "vertical"
+                    	spacing: "20dp"
+                        DashIcon:
+                    	    icon: "earth"
+                    	    pos_hint: {"center_x": .5} 
+                    	
+                        DashLabel:
+                            text: "Arts"
+                            
+                            
+                DashButton:
+                    size_hint: .5, .5
+                    on_release: root.manager.current = "events"
+                    	    
+                    BoxLayout:
+                    	orientation: "vertical"
+                    	spacing: "20dp"
+                        DashIcon:
+                    	    icon: "calendar-month-outline"
+                    	    pos_hint: {"center_x": .5} 
+                    	
+                        DashLabel:
+                            text: "Events"
+                            

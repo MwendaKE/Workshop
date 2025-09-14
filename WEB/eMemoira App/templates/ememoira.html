@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="A Memoir App Created to Keep all My Daily Experiences">
+    <meta name="keywords" content="Memoir App, Memoir, Diary, Journal">
+    <meta name="author" content="Erick Njagi">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for ('static', filename='font-awesome/css/font-awesome.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='ememoira.css') }}">
+    
+    <title>eMemoira</title>
+    
+    <style>
+    h3 {
+        color: #000;
+    }
+    </style>
+</head>
+
+<body id="body">
+  <div id="wrapper" class="memoirs-wrapper">
+    <!-- HEADER -->
+    <div class="header-container">
+      <h1>eMemoira</h1>
+    </div>
+      
+    <button id="add-memoir" class="add-memoir-btn" onclick="window.location.href='{{ url_for('add_memoir') }}';"><i class="fa fa-plus"></i></button>
+    
+    <div id="memoirs-container" class="memoirs-container">
+      <!-- Memoires will be added here by JavaScript -->
+    </div>
+   
+  </div>
+  
+  <script src="{{ url_for('static', filename='marked/marked.min.js') }}"></script>
+  <script src="{{ url_for('static', filename='ememoira.js') }}"></script>
+</body>
+</html>

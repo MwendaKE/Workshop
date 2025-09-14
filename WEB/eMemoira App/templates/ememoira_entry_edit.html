@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="author" content="Erick Njagi">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="stylesheet" href="{{ url_for ('static', filename='font-awesome/css/font-awesome.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for ('static', filename='simplemde/dist/simplemde.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='ememoira.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='ememoira_entry.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='ememoira_entry_add_edit.css') }}">
+    
+    <title>eMemoira Edit</title>
+</head>
+
+<body id="body" data-home-url="{{ url_for('home') }}">
+    <div class="memoir-entry-addedit-wrapper">
+      <!-- HEADER -->
+      <h2 id="memoir-entry-title">eMemoira Edit Entry</h2>
+      
+        <!-- START OF MEMOIR ADD FORM -->
+      <div id="memoir-entry-form-wrapper" class="memoir-entry-form-wrapper">
+          <form action="{{ url_for('edit_memoir', memoirid=memoir.id) }}" id="edit-memoir-form" method="post" enctype="multipart/form-data">
+            
+            <!-- MEMOIR TITLE -->
+            <div>
+              <label for="title">Memoir Title:</label>
+              <input id="memoir-editentry-title-input" type="text" name="title" value="{{memoir.title}}" maxlength="100" placeholder="Enter a title. e.g. Quitting Sex">
+              <span id="title-entry-feedback" class="entry-error">Maximum number of characters in a memoir title is 100.</span>
+            </div>
+            
+            <!-- MEMOIR BODY -->
+            <div>
+              <label for="body">Memoir Body:</label>
+              <textarea id="memoir-editentry-markdown-editor" name="body" minlength="50" placeholder="Write your story here...">{{memoir.body}}</textarea>
+              <span id="body-entry-feedback" class="entry-error">Minimum number of characters in a memoir body is 50.</span>
+            </div>
+              
+            <!-- MEMIOR AUDIOS -->
+            <div class="media">
+              <label>Memoir Audios: </label>
+              <div class="media-audios">
+               <div id="existing-audios-container">
+                    <!-- Existing audios will be stored here -->
+                   {% if audios %}
+                      <div class="existing-media">
+                          <h4>Existing Audios</h4>
+                          {% for audio in audios %}
+                          <label class="checkbox">
+                              Remove {{audio.filename}}
+                              <input type="checkbox" class="check-input" name="delete-audio" value="{{audio.id}}">
+                          </label>
+                          {% endfor %}
+                      </div>
+                   {% endif %}
+               </div>
+                
+               <div>
+                   <h4>Upload new audios</h4>
+                   <input type="file" name="audio" accept="audio/*" multiple> <!-- Accept only audio files -->
+               </div>
+              </div>
+            </div>
+              
+            <!-- MEMOIR PICTURES -->
+            <div class="media">
+              <label>Memoir Pictures: </label>
+              <div class="media-pictures">
+               <div id="existing-pictures-container">
+                   <!-- Existing pictures will be stored here -->
+                   {% if pictures %}
+                      <div class="existing-media">
+                          <h4>Existing Pictures</h4>
+                          {% for picture in pictures %}
+                          <label class="checkbox">
+                              Remove {{picture.filename}}
+                              <input type="checkbox" class="check-input" name="delete-picture" value="{{picture.id}}">
+                          </label>
+                          {% endfor %}
+                      </div>
+                   {% endif %}
+               </div>
+                
+               <div>
+                   <h4>Upload new pictures</h4>
+                   <input type="file" name="picture" accept="image/*" multiple> <!-- Accept only image files -->
+               </div>
+              </div>
+            </div>
+              
+            <!-- MEMOIR VIDEOS --> 
+            <div class="media">
+              <label>Memoir Videos: </label>
+              <div class="media-videos">
+               <div id="existing-videos-container">
+                   <!-- Existing videos will be stored here -->
+                   {% if videos %}
+                      <div class="existing-media">
+                          <h4>Existing Videos</h4>
+                          {% for video in videos %}
+                          <label class="checkbox">
+                              Remove {{video.filename}}
+                              <input type="checkbox" class="check-input" name="delete-video" value="{{video.id}}">
+                          </label>
+                          {% endfor %}
+                      </div>
+                   {% endif %}
+               </div>
+                
+               <div>
+                   <h4>Upload new videos</h4>
+                   <input type="file" name="video" accept="video/*" multiple> <!-- Accept only video files -->
+               </div>
+              </div>
+            </div>
+              
+            <!-- REFERENCE DATE -->
+            <div>
+               <label for="refdate">Memoir Reference Date:</label>
+               <input type="date" id="refdate" name="refdate" value ="{{date}}">
+               <span id="date-entry-feedback" class="entry-error">Reference date is required.</span>
+            </div>
+              
+            <!-- SUBMIT BUTTONS -->
+            <button type="submit" class ="submit">Submit</button>
+            <button type="button" id="memoir-delete-btn" class="submit delete" onclick="deleteMemoir({{memoir.id}})">Delete</button> 
+            <button type="button" class="submit close" onclick="window.location.href='{{ url_for('view_memoir', memoirid=memoir.id) }}';">Cancel</button>
+          </form>
+      </div>
+        <!-- END -->
+        
+    </div>
+    <script src="{{ url_for ('static', filename='simplemde/dist/simplemde.min.js') }}"></script>
+    <script src="{{ url_for ('static', filename='ememoira_entry_edit.js') }}"></script>
+</body>
+</html>

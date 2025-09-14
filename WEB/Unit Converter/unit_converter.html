@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="This is a the skeleton of all html docs i'll be using.">
+    <meta name="keywords" content="HTML, CSS, DOCUMENT, SKELETON, STRUCTURE">
+    <meta name="author" content="Erick Njagi">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="unit_converter.css">
+    
+    <title>Unit Converter</title>
+</head>
+
+<body id="body">
+    <h1>Unit Converter</h1>
+    
+    <div id="tablst">
+        <div class="tab active-tab" onclick="openUnitContainer(event,'time')">Time</div>
+        <div class="tab" onclick="openUnitContainer(event,'distance')">Length</div>
+        <div class="tab" onclick="openUnitContainer(event,'money')">Money</div>
+        <div class="tab" onclick="openUnitContainer(event,'mass')">Mass</div>
+    </div>
+    
+    <!-- TIME -->
+    
+    <div id="time" class="units-container active-container">
+      <h4>Time</h4>
+        
+      <label for="units-from-time">Convert From:</label>
+      <select id="units-from-time" name="units-from-time">
+          <option value="hrs">Hours</option>
+          <option value="mins">Minutes</option>
+          <option value="secs">Seconds</option>
+      </select>
+      
+      <label for="units-to-time">Convert To:</label>
+      <select id="units-to-time" name="units-to-time">
+          <option value="secs">Seconds</option>
+          <option value="mins">Minutes</option>
+          <option value="hrs">Hours</option>
+      </select>
+      
+      <label for="value-time">Your Value:</label>
+      <input type="text" id="user-input-time" name="value-time">
+      
+      <label for="result-time">Result:</label>
+      <p id="result-time" name="result-time"></p>
+    </div>
+    
+    <!-- DISTANCE -->
+    
+    <div id="distance" class="units-container">
+      <h4>Length</h4>
+        
+      <label for="units-from-distance">Convert From:</label>
+      <select id="units-from-distance" name="units-from-distance">
+          <option value="kms">Kilometers</option>
+          <option value="miles">Miles</option>
+          <option value="mtrs">Meters</option>
+          <option value="cms">Centimeters</option>
+          <option value="inch">Inch</option>
+          <option value="foot">Foot</option>
+          <option value="yard">Yard</option>
+      </select>
+      
+      <label for="units-to-distance">Convert To:</label>
+      <select id="units-to-distance" name="units-to-distance">
+          <option value="miles">Miles</option>
+          <option value="mtrs">Meters</option>
+          <option value="cms">Centimeters</option>
+          <option value="kms">Kilometers</option>
+          <option value="yard">Yard</option>
+          <option value="foot">Foot</option>
+          <option value="inch">Inch</option>
+      </select>
+      
+      <label for="value-distance">Your Value:</label>
+      <input type="text" id="user-input-distance" name="value-distance">
+      
+      <label for="result-distance">Result:</label>
+      <p id="result-distance" name="result-distance"></p>
+    </div>
+    
+    <!-- MONEY -->
+    
+    <div id="money" class="units-container">
+      <h4>Money</h4>
+      <label for="units-from-money">Convert From:</label>
+      <select id="units-from-money" name="units-from-money">
+          <option value="usd">USD</option>
+          <option value="ksh">KSH</option>
+          <option value="tsh">TSH</option>
+          <option value="ush">USH</option>
+      </select>
+      
+      <label for="units-to-money">Convert To:</label>
+      <select id="units-to-money" name="units-to-money">         
+          <option value="ksh">KSH</option>
+          <option value="usd">USD</option>
+          <option value="tsh">TSH</option>
+          <option value="ush">USH</option>
+      </select>
+      
+      <label for="value-money">Your Value:</label>
+      <input type="text" id="user-input-money" name="value-money">
+      
+      <label for="result-money">Result:</label>
+      <p id="result-money" name="result-money"></p>
+    </div>
+    
+    <!-- MASS -->
+    
+    <div id="mass" class="units-container">
+      <h4>Mass</h4>
+        
+      <label for="units-from-mass">Convert From:</label>
+      <select id="units-from-mass" name="units-from-mass">
+          <option value="kgs">Kilograms</option>
+          <option value="grms">Grams</option>
+          <option value="pnds">Pounds</option>
+      </select>
+      
+      <label for="units-to-mass">Convert To:</label>
+      <select id="units-to-mass" name="units-to-mass">
+          <option value="pnds">Pounds</option>
+          <option value="grms">Grams</option>
+          <option value="kgs">Kilograms</option>
+      </select>
+      
+      <label for="value-mass">Your Value:</label>
+      <input type="text" id="user-input-mass" name="value-mass">
+      
+      <label for="result-mass">Result:</label>
+      <p id="result-mass" name="result-mass"></p>
+    </div>
+    
+    <script src="unit_converter.js"></script>
+</body>
+</html>

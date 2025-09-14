@@ -1,0 +1,72 @@
+#:import SearchWindow screens.other.search_scrn
+
+
+<SearchWindow>:
+    query: search_input
+    
+    BoxLayout:
+        orientation: "vertical"
+        
+        BoxLayout:
+        	size_hint_y: None
+        	height: '40dp'
+        	padding: "15dp" , 0, "15dp", 0
+                
+        	MainTitleLabel:
+                text: "Search"
+                size_hint: .5, None
+                height: self.parent.height
+                padding: 0
+                
+            GeneralLabel:
+                id: result_count
+                size_hint: .5, None
+                height: self.parent.height
+                halign: "right"
+                color: (0.149, 0.867, 0.780, 1)
+                padding: 0
+                
+                        
+        BoxLayout:
+            size_hint_y: None
+            height: '50dp'
+            padding: "15dp"
+           
+            InputTextEditNormal:
+	            id: search_input
+	            size_hint: .8, None
+	            height: "35dp"
+	            font_size: '22sp'
+	            
+	        BuddyButton:                                                                                                                 
+                text: "Search"
+                size_hint: .2, None
+                height: "35dp"
+                color: "#FFFFFF"
+                background_color: "#111111"
+                on_release: root.search()
+                
+                canvas.before:
+                    Color:
+                        rgba: (1, 1, 1, .5)
+                     
+                    Line:
+                        rounded_rectangle: self.x, self.y, self.width, self.height, 1
+                        width: 1.3
+                        
+            
+        MDFloatLayout:
+            MDScrollView:
+                MDList:
+                    id: search_results_container
+          
+                
+            AddButtonContainer:
+                AddButton:
+                    text: "Back"
+                    on_release: root.manager.current = "dashboard"
+                
+                AddButton:
+                    text: "Clear"
+                    on_release: root.clear_search_container()
+                

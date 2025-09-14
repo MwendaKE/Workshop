@@ -1,0 +1,214 @@
+#:import MenuRightLabel screens.menu.sidemenu
+#:import MenuContentDrawer screens.menu.sidemenu
+
+    
+<MenuContentDrawer>:
+    orientation: "vertical"
+    padding: "8dp"
+    spacing: "8dp"
+        
+    MDLabel:
+        text: "S U P E R M E"
+        font_style: "H5"
+        size_hint_y: None
+        height: self.texture_size[1]
+            
+    ScrollView:
+        effect_cls: ScrollEffect
+        
+        MDBoxLayout:
+            orientation: "vertical"
+            adaptive_height: True
+            
+            MenuDivider:
+             
+            #--- APPLICATION ---
+            
+            MenuNavLabel:
+                text: "APPLICATION"
+                
+            MDList:
+                MenuListItem:
+                    text: "Books"
+                    on_release: root.open_books_window()
+                
+                    IconLeftWidgetWithoutTouch:
+                        icon: "book-open-outline"
+                    
+                    MenuRightLabel:
+                        text: root.get_books_count()
+              
+                MenuListItem:
+                    text: "Music"
+                    on_release: root.open_music_window()
+                
+                    IconLeftWidgetWithoutTouch:
+                        icon: "playlist-music-outline"
+                    
+                    MenuRightLabel:
+                        text: root.get_music_count()
+                    
+                MenuListItem:
+                    text: "Quotes"
+                    on_release: root.open_quotes_window()
+                 
+                    IconLeftWidgetWithoutTouch:
+                        icon: "comment-quote-outline"
+                    
+                    MenuRightLabel:
+                        text: root.get_quotes_count()
+                    
+                MenuListItem:
+                    text: "Diaries"
+                    on_release: root.open_diaries_window()
+                
+                    IconLeftWidgetWithoutTouch:
+                        icon: "av-timer"
+                       
+                    MenuRightLabel:
+                        text: root.get_diaries_count()
+                    
+                MenuListItem:
+                    text: "Poems"
+                    on_release: root.open_poems_window()
+                
+                    IconLeftWidgetWithoutTouch:
+                        icon: "heart-multiple-outline"
+                    
+                    MenuRightLabel:
+                        text: root.get_poems_count()
+                    
+                MenuListItem:
+                    text: "Tasks"
+                    on_release: root.open_tasks_window()
+                
+                    IconLeftWidgetWithoutTouch:
+                        icon: "receipt-text-outline"
+                    
+                    MenuRightLabel:
+                        text: root.get_tasks_count()
+                    
+                MenuListItem:
+                    text: "Articles"
+                    on_release: root.open_articles_window()
+                
+                    IconLeftWidgetWithoutTouch:
+                        icon: "earth"
+                    
+                    MenuRightLabel:
+                        text: root.get_articles_count()
+                       
+                MenuListItem:
+                    text: "Events"
+                    on_release: root.open_events_window()
+                
+                    IconLeftWidgetWithoutTouch:
+                        icon: "calendar-month-outline"
+                    
+                    MenuRightLabel:
+                        text: root.get_events_count()
+                    
+                MenuListItem:
+                    text: "Clips"
+                    on_release: root.open_clips_window()
+                
+                    IconLeftWidgetWithoutTouch:
+                        icon: "content-cut"
+                    
+                    MenuRightLabel:
+                        text: root.get_clips_count()
+                    
+            
+            MenuDivider:
+                
+            #--- PEOPLE --
+            
+            MenuNavLabel:
+                text: "PEOPLE"
+                
+            MDList:
+                MenuListItem:
+                    text: "Authors"
+                    on_release: root.open_authors_window()
+                
+                    IconLeftWidgetWithoutTouch:
+                        icon: "account-group-outline"
+                    
+                    MenuRightLabel:
+                        text: root.get_authors_count()
+              
+                MenuListItem:
+                    text: "Artists"
+                    on_release: root.open_artists_window()
+                
+                    IconLeftWidgetWithoutTouch:
+                        icon: "account-cowboy-hat-outline"
+                    
+                    MenuRightLabel:
+                        text: root.get_artists_count()
+                        
+                MenuListItem:
+                    text: "Poets"
+                    on_release: root.open_poets_window()
+                
+                    IconLeftWidgetWithoutTouch:
+                        icon: "account-heart-outline"
+                    
+                    MenuRightLabel:
+                        text: root.get_poets_count()
+              
+                MenuListItem:
+                    text: "Writers"
+                    on_release: root.open_writers_window()
+                
+                    IconLeftWidgetWithoutTouch:
+                        icon: "account-edit-outline"
+                    
+                    MenuRightLabel:
+                        text: root.get_writers_count()
+            
+            
+            MenuDivider:
+                
+            # --- HELPERS ---
+            
+            MenuNavLabel:
+                text: "HELPERS"
+                
+            MDList:
+                MenuListItem:
+                    text: "Categories"
+                    on_release: root.open_categories_window()
+                
+                    IconLeftWidgetWithoutTouch:
+                        icon: "select-group"
+                    
+                    MenuRightLabel:
+                        text: root.get_categs_count()
+              
+                MenuListItem:
+                    text: "Genres"
+                    on_release: root.open_genres_window()
+                
+                    IconLeftWidgetWithoutTouch:
+                        icon: "view-agenda-outline"
+                    
+                    MenuRightLabel:
+                        text: root.get_genres_count()
+            
+            MenuDivider:
+                    
+            #--- OTHERS ---
+                    
+            MenuNavLabel:
+                text: "OTHERS"
+                
+            MDList:              
+                MenuListItem:
+                    text: "About"
+                    on_release: root.open_about_window()
+                
+                    IconLeftWidgetWithoutTouch:
+                        icon: "information-outline"
+                    
+                                                                               

@@ -1,0 +1,59 @@
+#:import TasksWindow screens.tasks
+
+<TasksWindow>:
+    BoxLayout:
+        orientation: "vertical"
+        BoxLayout:
+            size_hint_y: .06
+            MainTitleLabel:
+                id: gen_tasks_count
+                text: "TASKS 0"
+                size_hint: .5, 1
+                
+            GeneralLabel:
+                id: tasks_complete
+                font_size: 22
+                size_hint: .1667, 1
+                halign: "right"
+                text: "0"
+                color: (0.514, 0.682, 0.455, 1)
+        
+            GeneralLabel:
+                id: tasks_failed
+                font_size: 22
+                size_hint: .1667, 1
+                halign: "right"
+                text: "0"
+                color: (0.937, 0.533, 0.529, 1)
+            
+            SeparatorVert:
+                size_hint_y: 1 
+                
+            GeneralLabel:
+                id: tasks_active
+                font_size: 22
+                size_hint: .1667, 1
+                halign: "right"
+                text: "0"
+                color: (0.918, 0.757, 0.333, 1)
+     
+        FloatLayout:
+            TasksRV:
+                id: tasks_rview
+                
+            BoxLayout:
+                size_hint: .5, .08
+                pos_hint: {'right': .98, 'y': .02} 
+    
+                AddButton:
+                    size_hint: .25, 1
+                    text: "Back"
+                    on_release: root.manager.current = "dashboard"
+                
+                AddButton:
+                    size_hint: .25, 1
+                    text: "Add"
+                    on_release: root.manager.current = "addtask"
+                    
+                
+<TasksRV@RecycleButtonTaskView>:

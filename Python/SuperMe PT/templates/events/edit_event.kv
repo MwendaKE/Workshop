@@ -1,0 +1,128 @@
+#:import EditEventWindow screens.events.edit_event
+#:import ScrollEffect  kivy.effects.scroll.ScrollEffect
+
+<EditEventWindow>:
+    event_id: event_id_label
+    event_name: event_name_input
+    date: event_date_input
+    time: event_time_input
+    venue: event_venue_input
+    address: event_address_input
+    notes: event_notes_input
+    budget: event_budget_input
+    att: event_att_spinner
+    
+    ScrollView:
+        effect_cls: ScrollEffect
+        
+        
+	    AddEditContentContainer:
+	        BoxLayout:
+	            size_hint_y: None
+	            height: '35dp'
+	            ContentHeader:
+	                text: "EDIT EVENT:"
+	           
+	            GeneralLabel:
+                    id: event_id_label
+                    halign: "right"
+                    color: (0.878, 0.780, 0.918, .5)
+   
+   
+	        BoxLayout:
+	            spacing: 10
+	            padding: 10
+	            size_hint_y: None
+	            height: self.minimum_height
+	            orientation: "vertical"
+	            
+	            
+	            BuddyLabel:
+	                text: "Event Name: *"
+	                
+	            InputTextEditNormal:
+	                id: event_name_input
+	                
+	                
+	            BuddyLabel:
+	                text: "Date: *"
+	                
+	            InputTextEditNormal:
+	                id: event_date_input
+	                hint_text: "2022-05-10"
+	                
+	                
+	            BuddyLabel:
+	                text: "Time: *"
+	                
+	            InputTextEditNormal:
+	                id: event_time_input
+	                hint_text: "1400"
+	                
+	                
+	            BuddyLabel:
+	                text: "Venue: *"
+	                
+	            InputTextEditNormal:
+	                id: event_venue_input
+	                
+	                
+	            BuddyLabel:
+	                text: "Address: *"
+	                
+	            InputTextEditNormal:
+	                id: event_address_input
+	                
+	            
+	            BuddyLabel:
+	                text: "Budget: *"
+	                
+	            InputTextEditNormal:
+	                id: event_budget_input
+	                
+	                
+	            BuddyLabel:
+	                text: "Notes: *"
+	                
+	            InputTextEdit:
+	                id: event_notes_input
+	                
+	            
+	            BuddyLabel:
+	                text: "Attendance: *"
+	                
+	            Spinner:
+	                id: event_att_spinner
+	                text: "Select Attendance"
+	                values: ["Attended", "Not Attended", "No Need To Attend"]
+	                   
+	        
+	        BoxLayout:
+            	size_hint_y: None
+                height: '20dp'
+                
+                
+            BoxLayout:
+                padding: 10
+                size_hint_y: None
+                height: '40dp'
+                orientation: "vertical"
+         
+                BoxLayout:
+                    spacing: 10
+                    size_hint: None, None
+                    size: '160dp', '40dp'
+                    pos_hint: {'right': 0.98, 'y': 0.20}
+                    
+                    CancelSaveButton:
+                        text: "Cancel"
+                        size_hint: None, None
+                        size: '80dp', self.parent.height
+                        on_release: root.manager.current = "events"
+                  
+                    CancelSaveButton:                                                                                                                   
+                        text: "Save"
+                        size_hint: None, None
+                        size: '80dp', self.parent.height 
+                        on_release: root.save_event()
+           

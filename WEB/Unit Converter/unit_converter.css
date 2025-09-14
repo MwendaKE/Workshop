@@ -1,0 +1,105 @@
+body {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    background-image: url(bg_image.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    padding: 10px;
+}
+
+.units-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    display: none;
+}
+
+h1 {
+    font-size: 1.2rem;
+    text-align: center;
+    letter-spacing: 1.2rem;
+    text-transform: uppercase;
+    text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 50px darkblue;
+}
+
+h4 {
+    color: blue;
+    text-transform: uppercase;
+    font-size: 1.2rem;
+    text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px green;
+    letter-spacing: 2rem;
+}
+
+select {
+    color: blue;
+}
+
+input {
+    color: red;
+    
+}
+input, select {
+    border: 3px solid blue;
+    height: 50px;
+    padding: 5px;
+    font-size: 16px;
+    background-color: transparent;
+    border-radius: 20px;
+}
+
+#tablst, input, p, select {
+    backdrop-filter: blur(2px);
+}
+
+input:focus {
+    border: 4px solid green;
+}
+
+p#result-time, p#result-distance, p#result-money, p#result-mass {
+    height: 50px;
+    font-size: 20px;
+    color: green;
+    padding: 5px;
+    background-color: transparent;
+    border: 3px solid green;
+    border-radius: 20px;
+    margin-top: 0;
+}
+
+label {
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+#tablst {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+    height: 35px;
+    border: 3px solid blue;
+    border-radius: 20px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+}
+
+#tablst .tab {
+    width: 100px;
+    height: 35px;
+    line-height: 35px;
+    text-align: center;
+    box-shadow: rgba(17, 17, 26, 0.05) 0px 1px 0px, rgba(17, 17, 26, 0.1) 0px 0px 8px;
+    text-transform: uppercase;
+    font-weight: medium;
+}
+
+.active-tab {
+    background-color: blue;
+    color: white;
+}
+
+.active-container {
+    display: flex;
+}

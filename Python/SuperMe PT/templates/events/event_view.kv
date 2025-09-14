@@ -1,0 +1,43 @@
+#:import EventViewWindow screens.events.event_view
+
+<EventViewWindow>:
+    ev_title: event_titlelabel
+    
+    BoxLayout:
+        orientation: "vertical"
+        
+        BoxLayout:
+            orientation: "vertical"
+            size_hint_y: None
+        	height: '40dp'
+        	padding: "15dp" , 0, "15dp", 0
+        	
+            GeneralLabel:
+                id: event_titlelabel
+                size_hint: 1, 1
+                padding: 0
+                
+            TitleSeparatorHorz:
+                
+                
+        FloatLayout:
+            MDScrollView:
+                MDList:
+                    id: event_content_container
+       
+            ContentFourButtonsContainer:
+                ContentFourButton:
+                    text: "Back"
+                    on_release: root.manager.current = "events"
+                
+                ContentFourButton:
+                    text: "Edit"
+                    on_release: root.edit_event()
+          
+                ContentFourButton:
+                    text: "Delete"
+                    on_release: root.delete_event()
+                    
+                ContentFourButton:
+                    text: "About"
+                    on_release: root.about_event()  

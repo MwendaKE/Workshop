@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="This is a the skeleton of all html docs i'll be using.">
+    <meta name="keywords" content="HTML, CSS, DOCUMENT, SKELETON, STRUCTURE">
+    <meta name="author" content="Erick Njagi">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="qgrapher.css">
+    
+    <title>Q Grapher</title>
+</head>
+
+<body id="body">
+    <h1>Q Grapher</h1>
+    
+    <p>Quadratic Equation:</p>
+    
+    <div id="eqn-container">
+        <label>y = </label>
+        <input type="text" id="value-a" placeholder="a"><span class="ex">x<sup>2</sup> + </span>
+        <input type="text" id="value-b" placeholder="b"><span class="ex">x</span> +
+        <input type="text" id="value-c" placeholder="c">
+    </div>
+    
+    <p>Values:</p>
+    
+    <div id="values">
+       <p id="xvalues"></p> 
+       <p id="yvalues"></p>
+    </div>
+    
+    <p>Graph:</p>
+    
+    <div id="graph">
+       <canvas id="myChart"></canvas> 
+    </div>
+    
+    <p>Roots:</p>
+    
+    <div id="roots">
+       <p id="roots1"></p> 
+       <p id="roots2"></p>
+    </div>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+    <!--<script src="./chart.js-4.4.3/package/dist/chart.umd.js"></script>-->
+    <script src="qgrapher2.js"></script>
+  
+</body>
+</html>

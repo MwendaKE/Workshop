@@ -1,0 +1,130 @@
+/* CSS FOR MEMOIR VIEW */
+/***********************/
+
+h2 {
+  font-size: 2rem;
+  color: deeppink;
+  background-color: beige;
+  padding: 10px;
+}
+
+.return-btn {
+  border: 1px solid deep;
+  border-radius: 15px;
+  font-size: 1rem;
+  text-decoration: none;
+  width: 150px;
+  padding: 5px;
+  margin: 10px 0 10px 0;
+  text-align: center;
+}
+
+.edit-btn {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  font-size: 2rem;
+  text-align: center;
+  color: beige;
+  position: fixed;
+  right: 40px;
+  bottom: 40px;
+  z-index: 1000;
+}
+
+.edit-btn  .fa {
+  margin-left: 8px;
+}
+
+.memoir-entry-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  position: relative;
+}
+
+.memoir-entry-wrapper .title-div {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  font-size: 1.2rem;
+  color: darkcyan;
+  margin: 5px 0 5px 0;
+}
+
+.memoir-auds-container audio {
+  padding: 5px;
+}
+
+.memoir-entry-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  position: relative;
+}
+
+.memoir-entry-container p {
+  text-align: justify;
+  font-size: 1.1rem;
+}
+
+.memoir-entry-container a {
+  font-size: 1.2rem;
+  color: deeppink;
+  text-decoration: none;
+}
+
+.memoir-auds-container, .memoir-pics-container, .memoir-vids-container {
+  overflow: auto;
+  white-space: nowrap;
+  padding: 10px;
+}
+
+/* PICTURE STYLES */
+
+.memoir-pics-container img {
+  width: 250px;
+  height: 200px;
+  padding: 5px;
+  object-fit: cover;
+  border-radius: 20px;
+}
+
+.memoir-pics-container img:hover {
+  filter: drop-shadow(1px 1px 10px deeppink);
+  transform: skewY(5deg);
+}
+
+/* VIDEO STYLES */
+
+.memoir-vids-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.memoir-vids-container div {
+  width: 200px;
+  height: 300px;
+  border-radius: 20px;
+  box-shadow: 0 0 2rem deeppink;
+  transition: all 0.1s ease;
+}
+
+.memoir-vids-container video {
+  width: 100%;
+  border-radius: 20px;
+}
+
+.memoir-vids-container div:hover {
+  transform: translateY(-1rem);
+}
+
+.memoir-vids-container div:hover~.memoir-vids-container div {
+  transform: translateX(130px);
+}
+
+.memoir-vids-container div:not(:first-child) {
+  margin-left: -50px;
+}
+

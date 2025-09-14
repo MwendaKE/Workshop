@@ -1,0 +1,82 @@
+#:import AddWriterWindow screens.menu.add_writer
+
+
+<AddWriterWindow>:
+    writer_name: article_writer_name
+    country: article_writer_country
+    description: article_writer_description
+    
+    
+    ScrollView:
+        effect_cls: ScrollEffect
+        
+        
+	    MDBoxLayout:
+	        orientation: "vertical"
+	        size_hint_y: None
+            height: self.minimum_height
+            
+	        BoxLayout:
+	            size_hint_y: None
+                height: '35dp'
+	            MainTitleLabel:
+	                text: "ADD WRITER:"
+	  
+	        BoxLayout:
+	            spacing: 10
+	            padding: 10
+	            orientation: "vertical"
+	            size_hint_y: None
+                height: self.minimum_height
+                
+                
+	            BuddyLabel:
+	                text: "Writer Name: *"
+	                
+	            InputTextEditNormal:
+	                id: article_writer_name
+	               
+	            BuddyLabel:
+	                text: "Country: *"
+	                
+	            CountrySpinner:
+	                id: article_writer_country
+	                text: "Select Country"
+	                
+	                
+	            BuddyLabel:
+	                text: "Description: *"
+	                
+	            InputTextEdit:
+	                id: article_writer_description
+	                
+	                
+	        BoxLayout:
+            	size_hint_y: None
+                height: '20dp'
+                
+                
+            BoxLayout:
+                padding: 10
+                size_hint_y: None
+                height: '40dp'
+                orientation: "vertical"
+          
+                BoxLayout:
+                    spacing: 10
+                    size_hint: None, None
+                    size: '160dp', '40dp'
+                    pos_hint: {'right': 0.98, 'y': 0.20}
+                    
+                    CancelSaveButton:
+                        text: "Cancel"
+                        size_hint: None, None
+                        size: '80dp', self.parent.height
+                        on_release: root.manager.current = "writers"
+                  
+                    CancelSaveButton:                                                                                                                   
+                        text: "Add"
+                        size_hint: None, None
+                        size: '80dp', self.parent.height 
+                        on_release: root.add_writer()
+              

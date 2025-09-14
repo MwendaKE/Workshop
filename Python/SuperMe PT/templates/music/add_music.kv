@@ -1,0 +1,104 @@
+#:import AddMusicWindow screens.music.add_music
+
+<AddMusicWindow>:
+    artist: music_artist_spinner
+    song_title: music_title_input
+    genre: music_genre_spinner
+    lyries: music_lyries_input
+    
+    
+    ScrollView:
+        effect_cls: ScrollEffect
+        
+        
+	    AddEditContentContainer:
+	        BoxLayout:
+	            size_hint_y: None
+	            height: '35dp'
+	            ContentHeader:
+	                text: "ADD MUSIC"
+	                
+	                
+	        BoxLayout:
+	            padding: 10
+	            spacing: 10
+	            size_hint_y: None
+	            height: self.minimum_height
+	            orientation: "vertical"
+	            
+	            
+	            BuddyLabel:
+	                text: "Song Title: *"
+	                
+	            InputTextEditNormal:
+	                id: music_title_input
+	                
+	                
+	            BuddyLabel:
+	                text: "Artist: *"
+	                
+	            BoxLayout:
+	                size_hint_y: None
+	                height: '35dp'
+	                MusicArtistSpinner:
+	                    id: music_artist_spinner
+	                    text: "Select Artist"
+	                    size_hint_x: .85
+	                
+	                BuddyButton:
+	                    size_hint_x: .15
+	                    on_release: root.manager.current = "addmusicartist"
+	               
+	               
+	            BuddyLabel:
+	                text: "Genre: *"
+	                
+	            BoxLayout:
+	                size_hint_y: None
+	                height: '35dp'
+	                MusicGenreSpinner:
+	                    id: music_genre_spinner
+	                    text: "Select Genre"
+	                    size_hint_x: .85
+	                
+	                BuddyButton:
+	                    size_hint_x: .15
+	                    on_release: root.manager.current = "addmusicgenre"
+	                
+	                
+	            BuddyLabel:
+	                text: "Song Lyries: *"
+	                
+	            InputTextEdit:
+	                id: music_lyries_input
+	                
+	                
+	        BoxLayout:
+            	size_hint_y: None
+                height: '20dp'
+                
+                
+            BoxLayout:
+                padding: 10
+                size_hint_y: None
+                height: '40dp'
+                orientation: "vertical"
+          
+                BoxLayout:
+                    spacing: 10
+                    size_hint: None, None
+                    size: '160dp', '40dp'
+                    pos_hint: {'right': 0.98, 'y': 0.20}
+                    
+                    CancelSaveButton:
+                        text: "Cancel"
+                        size_hint: None, None
+                        size: '80dp', self.parent.height
+                        on_release: root.manager.current = "music"
+                  
+                    CancelSaveButton:                                                                                                                   
+                        text: "Add"
+                        size_hint: None, None
+                        size: '80dp', self.parent.height 
+                        on_release: root.add_song()
+             

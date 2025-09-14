@@ -1,0 +1,44 @@
+#:import PoemWindow screens.poems.poems
+
+<TwoLinePoemView>:
+	IconLeftWidgetWithoutTouch:
+		icon: "heart-multiple-outline"
+		
+		
+<PoemWindow>:
+    poem_count: poem_count
+    
+    MDBoxLayout:
+        orientation: "vertical"
+        MDBoxLayout:
+            size_hint_y: None
+        	height: '40dp'
+            MainTitleLabel:
+                text: "POEMS:"
+                size_hint: .5, None
+        	    height: self.parent.height
+         
+            GeneralLabel:
+                id: poem_count
+                font_size: "16sp"
+                size_hint: .5, None
+        	    height: self.parent.height
+                halign: "right"
+                color: (0.149, 0.867, 0.780, 1)
+                   
+               
+        MDFloatLayout:
+            MDScrollView:
+                MDList:
+                    id: poems_container
+            
+            AddButtonContainer:
+                AddButton:
+                    text: "Back"
+                    icon: "arrow-left"
+                    on_release: root.manager.current = "dashboard"
+                
+                AddButton:
+                    text: "Add"
+                    icon: "plus"
+                    on_release: root.manager.current = "addpoem"

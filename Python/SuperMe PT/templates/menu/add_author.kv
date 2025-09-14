@@ -1,0 +1,91 @@
+#:import AddAuthorWindow screens.menu.add_author
+
+
+<AddAuthorWindow>:
+    author_name: author_name
+    occupation: author_occupation
+    country: author_country
+    description: author_description
+    
+    
+    ScrollView:
+        effect_cls: ScrollEffect
+        
+        
+	    BoxLayout:
+	        orientation: "vertical"
+	        size_hint_y: None
+            height: self.minimum_height
+            
+	        BoxLayout:
+	            size_hint_y: None
+                height: '35dp'
+	            MainTitleLabel:
+	                text: "ADD AUTHOR:"
+	  
+	        BoxLayout:
+	            spacing: 10
+	            padding: 10
+	            orientation: "vertical"
+	            size_hint_y: None
+                height: self.minimum_height
+                
+                
+	            BuddyLabel:
+	                text: "Author Name: *"
+	                
+	            InputTextEditNormal:
+	                id: author_name
+	                
+	                
+	            BuddyLabel:
+	                text: "Occupation: *"
+	                
+	            InputTextEditNormal:
+	                id: author_occupation
+	                
+	                
+	            BuddyLabel:
+	                text: "Country: *"
+	                
+	            CountrySpinner:
+	                id: author_country
+	                text: "Select Country"
+	                
+	                
+	            BuddyLabel:
+	                text: "Description: *"
+	                
+	            InputTextEdit:
+	                id: author_description
+	                
+	                
+	        BoxLayout:
+            	size_hint_y: None
+                height: '20dp'
+                
+                
+            BoxLayout:
+                padding: 10
+                size_hint_y: None
+                height: '40dp'
+                orientation: "vertical"
+          
+                BoxLayout:
+                    spacing: 10
+                    size_hint: None, None
+                    size: '160dp', '40dp'
+                    pos_hint: {'right': 0.98, 'y': 0.20}
+                    
+                    CancelSaveButton:
+                        text: "Cancel"
+                        size_hint: None, None
+                        size: '80dp', self.parent.height
+                        on_release: root.manager.current = "authors"
+                  
+                    CancelSaveButton:                                                                                                                   
+                        text: "Add"
+                        size_hint: None, None
+                        size: '80dp', self.parent.height 
+                        on_release: root.add_author()
+              

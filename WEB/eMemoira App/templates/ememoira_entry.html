@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="author" content="Erick Njagi">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="stylesheet" href="{{ url_for ('static', filename='font-awesome/css/font-awesome.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for ('static', filename='fancybox/dist/fancybox/fancybox.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='ememoira.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='ememoira_entry.css') }}">
+    
+    <title>eMemoira View</title>
+</head>
+
+<body id="body">
+    <div class="memoir-entry-wrapper">
+        
+      <!-- HEADER -->
+      <div class="title-div">
+        <h2 id="memoir-entry-title"></h2>
+        <h6 id="memoir-entry-time" class="memoir-entry-time"></h6> 
+        <h6 id="memoir-refer-time" class="memoir-entry-time"></h6> 
+      </div>
+        
+      <div id="memoir-entry-container" class="memoir-entry-container">
+          <!-- Entry will be displayed here-->
+      </div>
+        
+      <!-- CONTAINERS -->
+      
+      <h4>Audios</h4>
+      <div id="memoir-auds-container" class="memoir-auds-container">
+          <!-- Audios will be held here -->
+      </div>
+        
+      <h4>Pictures</h4>
+      <div id="memoir-pics-container" class="memoir-pics-container">
+          <!-- Pictures will be held here -->
+      </div>
+       
+      <h4>Videos</h4>
+      <div id="memoir-vids-container" class="memoir-vids-container">
+          <!-- Videos will be held here -->
+      </div>
+        
+      <!-- CONTAINER END -->
+        
+      <button class="return-btn" onclick="window.location.href='{{ url_for('home') }}';"><i class="fa fa-back">Return Home</a>
+      <button class="edit-btn button" onclick="window.location.href='{{ url_for('edit_memoir', memoirid=memoirid) }}';"><i class="fa fa-edit"></i></button>
+    
+    </div>
+    
+    <!-- MARKED.JS IS USED TO RENDER TEXT WRITTEN WITH MARKDOWN EDITORS SUCH AS SIMPLEMDE -->
+    <script src="{{ url_for('static', filename='marked/marked.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='fancybox/dist/fancybox/fancybox.umd.js') }}"></script>
+    
+    <!-- -->
+    <script src="{{ url_for('static', filename='ememoira_entry.js') }}"></script>
+    <script>
+        const memoirId = {{memoirid}};
+        displayMemoirEntry(memoirId);
+    </script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    
+    <script>
+        Fancybox.bind("[data-fancybox]", {
+            Thumbs: {
+                autoStart: true,
+                buttons: [
+            "zoom",
+            "share",
+            "slideShow",
+            "fullScreen",
+            "download",
+            "thumbs",
+            "close"
+        ],
+            }
+        });
+    </script>
+    
+</body>
+</html>

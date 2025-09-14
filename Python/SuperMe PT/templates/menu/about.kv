@@ -1,0 +1,68 @@
+<AboutWindow@Screen>:
+    MDBoxLayout:
+        orientation: "vertical"
+        padding: "20dp"
+        spacing: "20dp"
+    
+        ScrollView:
+            effect_cls: ScrollEffect
+           
+            MDGridLayout:
+                cols: 1
+                adaptive_height: True
+                padding: "10dp"
+                spacing: "10dp"
+                
+                Image:
+                    id: img
+                    size_hint: None, None
+                    size: 512, 512
+                    source: "./assets/imgs/logo1.png"
+                
+                AboutLabelHeader:
+                    text: "APP NAME:"
+                    
+                AboutLabelContent:
+                    text: "SuperMe Mobile V2.0.1"
+                    
+                AboutLabelHeader:
+                    text: "ABOUT:"
+                    
+                AboutLabelContent:
+                    text: "SuperMe Mobile helps you manage your books, tasks, events, diary, poems and etecetra in a simple way. In order words, it helps you to be super. It is perfect for those who love reading."
+                    
+                AboutLabelHeader:
+                    text: "CREATOR:"
+                    
+                AboutLabelContent:
+                    text: "Erick Njagi"
+                    
+                AboutLabelHeader:
+                    text: "EMAIL ADDRESS:"
+                    
+                AboutLabelContent:
+                    text: "ericknjagi85@gmail.com"
+                    
+                AboutLabelHeader:
+                    text: "PHONE NO:"
+                    
+                AboutLabelContent:
+                    text: "+254 702 623 729 / +254 799 678 038"
+                    
+                AboutLabelHeader:
+                    text: "COMPANY:"
+                    
+                AboutLabelContent:
+                    text: "MwendaSoft"
+                    
+                AboutLabelHeader:
+                    text: "WEBSITE:"
+                    
+                AboutLabelContent:
+                    text: "mwendasoft.com"
+                    
+                    
+        ContentSingleButton:
+            text: "Back"
+            on_release: root.manager.current = "dashboard"
+  

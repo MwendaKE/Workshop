@@ -1,0 +1,43 @@
+#:import ArticleViewWindow screens.articles.article_view
+
+<ArticleViewWindow>:
+    article_title_label: article_titlelabel
+    
+    BoxLayout:
+        orientation: "vertical"
+        
+        BoxLayout:
+            orientation: "vertical"
+            size_hint_y: None
+        	height: '40dp'
+        	padding: "15dp" , 0, "15dp", 0
+        	
+            GeneralLabel:
+                id: article_titlelabel
+                size_hint: 1, 1
+                padding: 0
+                
+            TitleSeparatorHorz:
+               
+                 
+        FloatLayout:
+            MDScrollView:
+                MDList:
+                    id: article_content_container
+                    
+                    
+            ContentThreeButtonsContainer:
+                ContentThreeButton:
+                    text: "Back"
+                    icon: "arrow-left"
+                    on_release: root.manager.current = "articles"
+                
+                ContentThreeButton:
+                    text: "Delete"
+                    icon: "delete-outline"
+                    on_release: root.delete_article()
+                    
+                ContentThreeButton:
+                    text: "About"
+                    icon: "information-outline"
+                    on_release: root.about_article()  

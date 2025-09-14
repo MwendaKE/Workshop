@@ -1,0 +1,43 @@
+#:import DiaryViewWindow screens.diaries.diary_view
+
+<DiaryViewWindow>:
+    dv_title: diary_titlelabel
+    
+    BoxLayout:
+        orientation: "vertical"
+        
+        BoxLayout:
+            orientation: "vertical"
+            size_hint_y: None
+        	height: '40dp'
+        	padding: "15dp" , 0, "15dp", 0
+        	
+            GeneralLabel:
+                id: diary_titlelabel
+                size_hint: 1, 1
+                padding: 0
+   
+            TitleSeparatorHorz:
+               
+               
+        FloatLayout:
+            MDScrollView:
+                MDList:
+                    id: diary_content_container
+          
+            ContentFourButtonsContainer:
+                ContentFourButton:
+                    text: "Back"
+                    on_release: root.manager.current = "diaries"
+                
+                ContentFourButton:
+                    text: "Edit"
+                    on_release: root.edit_entry()
+          
+                ContentFourButton:
+                    text: "Delete"
+                    on_release: root.delete_entry()
+                    
+                ContentFourButton:
+                    text: "About"
+                    on_release: root.about_entry()  

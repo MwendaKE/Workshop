@@ -1,0 +1,31 @@
+#:import PoemViewWindow screens.poems.poem_view
+
+<PoemViewWindow>:
+    pm_title: poem_titlelabel
+    
+    BoxLayout:
+        orientation: "vertical"
+        
+        BoxLayout:
+            orientation: "vertical"
+            size_hint_y: None
+        	height: '40dp'
+        	padding: "15dp" , 0, "15dp", 0
+            
+            GeneralLabel:
+                id: poem_titlelabel
+                size_hint: 1, 1
+                padding: 0
+                
+            TitleSeparatorHorz:
+             
+             
+        FloatLayout:  
+            MDScrollView:
+                MDList:
+                    id: poem_container
+
+            ContentSingleButton:
+                text: "Back"
+                on_release: root.manager.current = "poems"
+                

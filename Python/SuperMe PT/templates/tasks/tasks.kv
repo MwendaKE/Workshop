@@ -1,0 +1,67 @@
+#:import TasksWindow screens.tasks.tasks
+
+
+<ThreeLineTaskView>:
+	IconLeftWidgetWithoutTouch:
+		icon: "receipt-text-outline"
+		
+		
+<TasksWindow>:
+    BoxLayout:
+        orientation: "vertical"
+        BoxLayout:
+            size_hint_y: None
+        	height: '40dp'
+            MainTitleLabel:
+                text: "TASKS:"
+                size_hint: .25, None
+        	    height: self.parent.height
+                
+            GeneralLabel:
+                id: total_tasks_count
+                font_size: "16sp"
+                size_hint: .25, None
+        	    height: self.parent.height
+                halign: "left"
+                color: (0.902, 0.275, 0.275, .8)
+       
+            GeneralLabel:
+                id: tasks_complete
+                font_size: "16sp"
+                size_hint: .1667, None
+        	    height: self.parent.height
+                halign: "right"
+                color: (0.514, 0.682, 0.455, 1)
+        
+            GeneralLabel:
+                id: tasks_failed
+                font_size: "16sp"
+                size_hint: .1667, None
+        	    height: self.parent.height
+                halign: "right"
+                color: (0.937, 0.533, 0.529, 1)
+
+            GeneralLabel:
+                id: tasks_active
+                font_size: "16sp"
+                size_hint: .1667, None
+        	    height: self.parent.height
+                halign: "right"
+                color: (0.918, 0.757, 0.333, 1)
+     
+        MDFloatLayout:
+            MDScrollView:
+                MDList:
+                    id: tasks_container
+                
+            AddButtonContainer:
+                AddButton:
+                    text: "Back"
+                    icon: "arrow-left"
+                    on_release: root.manager.current = "dashboard"
+                
+                AddButton:
+                    text: "Add"
+                    icon: "plus"
+                    on_release: root.manager.current = "addtask"
+                    

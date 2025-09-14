@@ -1,0 +1,46 @@
+#:import PoetsWindow screens.menu.poets
+
+
+<OneLinePoetView>:
+	IconLeftWidgetWithoutTouch:
+		icon: "account-heart-outline"
+
+
+<PoetsWindow>:
+    MDBoxLayout:
+        orientation: "vertical"
+        MDBoxLayout:
+            size_hint_y: None
+        	height: '35dp'
+            MainTitleLabel:
+                text: "POETS"
+                size_hint_x: .5
+                size_hint_y: None
+        	    height: '35dp'
+         
+            GeneralLabel:
+                id: poets_count
+                font_size: 22
+                size_hint_x: .5
+                size_hint_y: None
+        	    height: '35dp'
+                halign: "right"
+                text: "0"
+                color: (0.149, 0.867, 0.780, 1)
+                   
+               
+        MDFloatLayout:
+            MDScrollView:
+                MDList:
+                    id: poets_container
+            
+            AddButtonContainer:
+                AddButton:
+                    text: "Back"
+                    icon: "arrow-left"
+                    on_release: root.manager.current = "dashboard"
+                
+                AddButton:
+                    text: "Add"
+                    icon: "plus"
+                    on_release: root.manager.current = "addpoet"

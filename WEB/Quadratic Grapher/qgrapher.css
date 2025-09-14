@@ -1,0 +1,52 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 10px;
+}
+
+#eqn-container input {
+    font-size: 20px;
+    height: 50px;
+    border: 2px dotted blue;
+    width: 60px;
+    padding: 0;
+    text-align: center;
+    color: red;
+}
+
+#eqn-container, #roots, #values {
+    border: 2px solid black;
+    padding: 5px;
+}
+
+#roots, #values {
+    height: 50px;
+}
+#eqn-container .ex, label {
+    font-size: 28px;
+    font-style: italic;
+    color: blue;
+}
+
+#graph {
+    border: 2px solid black;
+    height: 250px;
+}
+
+#myChart {
+    height: 100%;
+    width: 100%;
+}
+
+#eqn-container {
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+}

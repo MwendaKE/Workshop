@@ -1,0 +1,28 @@
+#:import WriterViewWindow screens.menu.writer_view
+
+<WriterViewWindow>:
+    BoxLayout:
+        orientation: "vertical"
+        padding: 10
+        spacing: 10
+        BoxLayout:
+            size_hint_y: None
+            size: 140, '35dp'
+            orientation: "vertical"
+            
+            GeneralLabel:
+                id: writer_titlelabel
+                size_hint_y: None
+        	    height: '40dp'
+                text: ""
+                
+            TitleSeparatorHorz:
+                
+        FloatLayout:
+            MDScrollView:
+                MDList
+                    id: writer_content_container
+       
+            ContentSingleButton:
+                on_release: root.manager.current = "writers"
+                

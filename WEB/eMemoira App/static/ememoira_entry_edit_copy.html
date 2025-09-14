@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="author" content="Erick Njagi">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for ('static', filename='font-awesome/css/font-awesome.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for ('static', filename='simplemde/dist/simplemde.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='ememoira.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='ememoira_entry.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='ememoira_entry_add_edit.css') }}">
+    
+    <title>Memoir Edit</title>
+</head>
+
+<body id="body">
+    <div class="memoir-entry-addedit-wrapper">
+      <!-- HEADER -->
+      <h2 id="memoir-entry-title">Memoir Edit Entry</h2>
+      
+        <!-- START OF MEMOIR EDIT FORM -->
+      <div id="memoir-entry-form-wrapper" class="memoir-entry-form-wrapper">
+          <form action="{{ url_for('edit_memoir', memoirid=memoir.id) }}" id="edit-memoir-form" method="post" enctype="multipart/form-data">
+            <input id="memoir-editentry-title" type="text" name="title" value="{{memoir.title}}"required>
+            <textarea id="memoir-editentry-markdown-editor" name="body" required>{{memoir.body}}</textarea>
+        
+            <div>
+               <label for="audio">Add audio files:</label>
+               <input type="file" name="audio" accept="audio/*" multiple> <!-- Accept only audio files -->
+            </div>
+        
+            <div>
+               <label for="picture">Add picture files:</label>
+               <input type="file" name="picture" accept="image/*" multiple> <!-- Accept only image files -->
+            </div>
+              
+            <div>
+               <label for="video">Add video files:</label>
+               <input type="file" name="video" accept="video/*" multiple> <!-- Accept only video files -->
+            </div>
+              
+            <button type="submit" class ="submit">Submit</button>
+            <button type="button" class="submit close" onclick="window.location.href='{{ url_for('view_memoir', memoirid=memoir.id) }}';">Cancel</button>
+         </form>
+      </div>
+        <!-- END -->
+        
+    </div>
+    <script src="{{ url_for ('static', filename='simplemde/dist/simplemde.min.js') }}">></script>
+    <script>
+        
+    </script>
+
+</body>
+</html>
