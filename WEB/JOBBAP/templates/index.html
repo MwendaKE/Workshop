@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Job Application</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Job Application</h1>
+        
+        <form id="applicationForm">
+            <h2>Personal Information</h2>
+            <input type="text" name="full_name" placeholder="Full Name" required>
+            <input type="tel" name="phone" placeholder="Phone Number" required>
+            <input type="email" name="email" placeholder="Email Address" required>
+            
+            <h2>Job Details</h2>
+            <select name="position" required>
+                <option value="">Select Position</option>
+                <option value="Manager">Manager</option>
+                <option value="Ass. Manager">Ass. Manager</option>
+                <option value="Supervisor">Supervisor</option>
+                <option value="Teller">Teller</option>
+                <option value="Attendants">Attendants</option>
+                <option value="Cleaner">Cleaner</option>
+                <option value="Gate Man">Gate Man</option>
+            </select>
+            <textarea name="experience" placeholder="Work Experience" required></textarea>
+            
+            <button type="submit">Submit Application</button>
+        </form>
+        
+        <div id="message"></div>
+    </div>
+    
+    <script src="/static/js/script.js"></script>
+</body>
+</html>

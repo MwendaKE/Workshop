@@ -1,0 +1,70 @@
+Step 1: Install Only What You Need
+------------------------------------------------
+_________AUTO_________
+
+pip install -r requirements.txt
+
+_________MANUAL______
+
+pkg install postgresql python
+pip install flask psycopg2-binary
+
+
+Step 2: Setup PostgreSQL (One Time)
+----------------------------------
+
+initdb ~/pgdata
+pg_ctl -D ~/pgdata start
+createdb job_applications
+
+
+What This Does:
+-------------------------
+1. Simple Form - 5 basic fields
+2. Saves to PostgreSQL - All data stored properly
+3. Clean Code - Easy to understand
+4. Works Immediately - No complex setup
+
+
+Public Access
+----------------------
+
+1. serveo.net (Easiest) 
+(I tested it using this one)
+**********************
+# Run your app first
+python app.py
+
+# In another terminal, create tunnel
+ssh -R 80:localhost:5000 serveo.net
+
+(Share the url given to someone to apply too)
+
+
+2. Localtunnel (Easy)
+************************
+# Install Node.js
+pkg install nodejs
+
+# Install localtunnel globally
+npm install -g localtunnel
+
+# Run your app first
+python app.py
+
+# In another terminal, create tunnel
+lt --port 5000
+
+
+3. ngrok (PC)
+************
+# Install
+pkg install ngrok
+
+# Terminal 1
+python app.py
+
+# Terminal 2  
+ngrok http 5000
+
+
