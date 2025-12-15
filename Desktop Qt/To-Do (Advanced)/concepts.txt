@@ -1,0 +1,3 @@
+moc mainwindow.h -o mainwindow.moc.cpp
+g++ -fPIC main.cpp mainwindow.cpp mainwindow.moc.cpp -o todo `pkg-config --cflags --libs Qt5Widgets Qt5Sql`
+

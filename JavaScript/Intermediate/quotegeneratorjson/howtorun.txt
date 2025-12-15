@@ -1,0 +1,62 @@
+change to this directory.
+=========================
+$ cd /storage/emulated/0/DCI-X/GIT/Workshop/JavaScript/Intermediate/quotegeneratorjson
+
+then start any server. e.g:
+==========================
+$ python -m http.server 8000
+
+or a node server:
+=================
+$ npm install -g serve // install it
+$ cd /storage/emulated/0/DCI-X/GIT/Workshop/JavaScript/Intermediate/quotegeneratorjson
+$ serve
+
+Why this?
+=========
+
+A server is needed here because of how modern browsers handle security for local files:
+
+---
+
+1. The Problem with fetch() on local files
+
+In your project, you’re using this:
+
+
+fetch("quotes.json")
+
+If you open index.html directly in a browser (file:// URL), the browser blocks fetch() from reading local files.
+
+This is due to CORS (Cross-Origin Resource Sharing) and security restrictions — browsers prevent scripts from reading local files for safety.
+
+---
+
+2. How a server fixes it
+
+A server serves your files over HTTP instead of file://.
+
+When you use a server, the browser sees your HTML and JSON as coming from the same origin (same domain + port), so fetch() works.
+
+Example:
+
+
+http://localhost:8000/index.html
+http://localhost:8000/quotes.json
+
+Now, fetch("quotes.json") works because both are on the same server.
+
+---
+
+3. Extra benefits of a server
+
+Lets you test dynamic features (fetching JSON, APIs, etc.).
+
+Allows you to simulate a real web environment.
+
+Needed for future projects with Node.js backend or databases.
+
+---
+
+💡 Summary:
+Without a server, your JS cannot read local JSON files due to browser security. A server makes your project behave like it’s live on the web, solving this restriction.

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Recipe Finder</title>
+<style>
+* { margin:0; padding:0; box-sizing:border-box; font-family: Arial, sans-serif; }
+body { background:#f9f9f9; }
+header { background:#0288d1; color:white; padding:15px; text-align:center; }
+.container { max-width:900px; margin:20px auto; padding:10px; }
+input, select { padding:8px; margin:5px 0; border-radius:5px; border:1px solid #ccc; width:100%; }
+button { padding:8px 12px; border:none; border-radius:5px; cursor:pointer; background:#0288d1; color:white; }
+button:hover { background:#0277bd; }
+.recipe-card { background:white; border-radius:10px; padding:10px; margin:10px 0; box-shadow:0 3px 6px rgba(0,0,0,0.1); }
+.recipe-card img { width:100%; max-height:200px; object-fit:cover; border-radius:10px; }
+.recipe-card h3 { margin:10px 0 5px; }
+.fav-btn { background:#2e7d32; margin-top:5px; display:block; width:100%; }
+.fav-btn:hover { background:#1b5e20; }
+@media(max-width:600px){ input, select, button { font-size:14px; } }
+</style>
+</head>
+<body>
+
+<header>
+    <h1>Recipe Finder</h1>
+</header>
+
+<div class="container">
+    <input type="text" id="searchInput" placeholder="Search recipe by name...">
+    <select id="cuisineSelect">
+        <option value="">All Cuisines</option>
+        <option value="Italian">Italian</option>
+        <option value="Chinese">Chinese</option>
+        <option value="Mexican">Mexican</option>
+        <option value="Indian">Indian</option>
+        <option value="American">American</option>
+    </select>
+    <div id="recipesContainer"></div>
+</div>
+
+<script src="recipe.js"></script>
+</body>
+</html>

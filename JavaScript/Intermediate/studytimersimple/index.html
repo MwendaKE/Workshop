@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Study Timer</title>
+
+<style>
+    /* Reset */
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: Arial, sans-serif;
+    }
+
+    body {
+        background: #f3f3f3;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        padding: 20px;
+    }
+
+    /* Timer Container */
+    .timer-box {
+        background: white;
+        width: 100%;
+        max-width: 400px;
+        padding: 25px;
+        border-radius: 10px;
+        box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+        text-align: center;
+    }
+
+    /* Timer Display */
+    .time-display {
+        font-size: 50px;
+        font-weight: bold;
+        margin-bottom: 20px;
+        color: #333;
+    }
+
+    /* Buttons container */
+    .btn-group {
+        display: flex;
+        justify-content: space-between;
+        gap: 10px;
+    }
+
+    /* Buttons */
+    button {
+        flex: 1;
+        padding: 12px;
+        border: none;
+        border-radius: 8px;
+        color: white;
+        font-size: 16px;
+        cursor: pointer;
+    }
+
+    .start-btn { background: #28a745; }  /* Green */
+    .pause-btn { background: #ffc107; }  /* Yellow */
+    .reset-btn { background: #dc3545; }  /* Red */
+
+    /* Mobile improvements */
+    @media (max-width: 400px) {
+        .time-display {
+            font-size: 38px;
+        }
+
+        button {
+            font-size: 14px;
+            padding: 10px;
+        }
+    }
+</style>
+</head>
+
+<body>
+
+<div class="timer-box">
+    <div class="time-display" id="time">00:00:00</div>
+
+    <div class="btn-group">
+        <button class="start-btn" id="start">Start</button>
+        <button class="pause-btn" id="pause">Pause</button>
+        <button class="reset-btn" id="reset">Reset</button>
+    </div>
+</div>
+
+<!-- Link external JavaScript -->
+<script src="script.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,5 @@
+$ moc mainwindow.h -o mainwindow.moc.cpp
+$ oc contactdialog.h -o contactdialog.moc.cpp
+$ g++ -fPIC main.cpp mainwindow.cpp mainwindow.moc.cpp contactdialog.cpp contactdialog.moc.cpp -o addressbook `pkg-config --cflags --libs Qt5Widgets Qt5Sql`
+
+

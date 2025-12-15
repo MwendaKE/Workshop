@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Local Weather Dashboard</title>
+
+<style>
+    * { margin:0; padding:0; box-sizing:border-box; font-family: Arial, sans-serif; }
+
+    body {
+        background: #e0f7fa;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        padding: 20px;
+    }
+
+    .weather-container {
+        background: white;
+        max-width: 400px;
+        width: 100%;
+        padding: 25px;
+        border-radius: 12px;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        text-align: center;
+    }
+
+    h2 { margin-bottom: 15px; }
+
+    input[type="text"] {
+        width: 100%;
+        padding: 12px;
+        border-radius: 8px;
+        border: 1px solid #ccc;
+        font-size: 16px;
+        margin-bottom: 15px;
+    }
+
+    button {
+        padding: 12px 20px;
+        border: none;
+        border-radius: 8px;
+        background: #0288d1;
+        color: white;
+        font-size: 16px;
+        cursor: pointer;
+        margin-bottom: 20px;
+    }
+
+    .weather-info {
+        display: none;
+        margin-top: 15px;
+    }
+
+    .weather-info img {
+        width: 80px;
+        height: 80px;
+    }
+
+    .weather-info p {
+        margin: 8px 0;
+        font-size: 18px;
+    }
+
+    @media(max-width:400px) {
+        input, button { font-size: 14px; padding:10px; }
+        .weather-info p { font-size:16px; }
+    }
+</style>
+</head>
+
+<body>
+
+<div class="weather-container">
+    <h2>Local Weather Dashboard</h2>
+    <input type="text" id="cityInput" placeholder="Enter city name">
+    <button id="getWeatherBtn">Get Weather</button>
+
+    <div class="weather-info" id="weatherInfo">
+        <h3 id="cityName"></h3>
+        <img id="weatherIcon" src="" alt="Weather Icon">
+        <p id="temperature"></p>
+        <p id="description"></p>
+    </div>
+</div>
+
+<script src="weather.js"></script>
+
+</body>
+</html>

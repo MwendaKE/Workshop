@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ElectroStore</title>
+<style>
+*{margin:0; padding:0; box-sizing:border-box; font-family: Arial, sans-serif;}
+body{background:#f4f4f4;}
+header{background:#0288d1; color:white; padding:15px; text-align:center;}
+.container{max-width:900px; margin:20px auto; padding:10px;}
+.products{display:grid; grid-template-columns: repeat(auto-fill,minmax(200px,1fr)); gap:15px;}
+.product{background:white; padding:10px; border-radius:10px; text-align:center; box-shadow:0 3px 6px rgba(0,0,0,0.1);}
+.product img{max-width:100%; height:150px; object-fit:contain; margin-bottom:10px;}
+button{padding:8px 12px; border:none; border-radius:6px; cursor:pointer; background:#0288d1; color:white;}
+button:hover{background:#0277bd;}
+.cart{background:white; padding:10px; border-radius:10px; margin-top:20px; box-shadow:0 3px 6px rgba(0,0,0,0.1);}
+.cart-item{display:flex; justify-content: space-between; padding:5px 0; border-bottom:1px solid #ccc;}
+.cart-item:last-child{border-bottom:none;}
+.quantity{width:50px; text-align:center;}
+.total{font-weight:bold; margin-top:10px; text-align:right;}
+.clear-cart{margin-top:10px; background:#d32f2f;}
+.clear-cart:hover{background:#b71c1c;}
+.checkout{margin-top:10px; background:#2e7d32;}
+.checkout:hover{background:#1b5e20;}
+
+/* MODAL */
+.modal{display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.6); justify-content:center; align-items:center;}
+.modal-content{background:white; padding:20px; border-radius:10px; text-align:center; max-width:300px;}
+.modal button{margin-top:10px;}
+@media(max-width:600px){
+    .products{grid-template-columns:1fr;}
+}
+</style>
+</head>
+<body>
+
+<header>
+    <h1>ElectroStore</h1>
+</header>
+
+<div class="container">
+    <div class="products" id="products"></div>
+
+    <div class="cart" id="cart">
+        <h2>Shopping Cart</h2>
+        <div id="cartItems"></div>
+        <div class="total" id="total">Total: $0</div>
+        <button class="checkout" id="checkoutBtn">Checkout</button>
+        <button class="clear-cart" id="clearCart">Clear Cart</button>
+    </div>
+</div>
+
+<!-- THANK YOU MODAL -->
+<div class="modal" id="thankYouModal">
+    <div class="modal-content">
+        <h2>Thank You!</h2>
+        <p>Your purchase has been completed successfully.</p>
+        <button id="closeModal">Close</button>
+    </div>
+</div>
+
+<script src="cart.js"></script>
+</body>
+</html>

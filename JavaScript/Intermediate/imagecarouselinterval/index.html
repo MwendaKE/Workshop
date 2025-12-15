@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Auto Image Carousel with Dots</title>
+
+<style>
+/* ---------- Basic page layout ---------- */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 24px;
+  display: flex;
+  justify-content: center;
+  background: #f6f7f9;
+}
+
+/* ---------- Carousel container ---------- */
+.carousel {
+  width: 100%;
+  max-width: 800px;       /* maximum width */
+  position: relative;
+  overflow: hidden;       /* hide overflow when sliding */
+  border-radius: 10px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+  background: #fff;
+}
+
+/* ---------- Slides wrapper (row of images) ---------- */
+.slides {
+  display: flex;               /* place slides in a row */
+  transition: transform 0.45s ease; /* smooth slide */
+  will-change: transform;
+}
+
+/* each slide image takes full carousel area */
+.slide {
+  min-width: 100%;    /* each slide is full width */
+  box-sizing: border-box;
+  user-select: none;
+}
+
+.slide img {
+  display: block;
+  width: 100%;
+  height: 450px;
+  object-fit: cover;   /* crop nicely */
+}
+
+/* make images shorter on small screens */
+@media (max-width: 480px) {
+  .slide img { height: 240px; }
+}
+
+/* ---------- Dots navigation ---------- */
+.dots {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px 0 18px;
+  background: transparent;
+}
+
+.dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #d5d5d5;
+  cursor: pointer;
+  transition: transform 0.15s ease, background-color 0.15s ease;
+}
+
+.dot:hover { transform: scale(1.15); }
+
+.dot.active {
+  background: #003B73;  /* deep blue active color */
+  box-shadow: 0 0 0 4px rgba(0,59,115,0.12);
+}
+
+/* optional pause overlay indicator (small) */
+.pause-indicator {
+  position: absolute;
+  top: 8px;
+  left: 12px;
+  background: rgba(0,0,0,0.45);
+  color: #fff;
+  padding: 6px 10px;
+  border-radius: 6px;
+  font-size: 13px;
+  display: none;
+}
+.pause-indicator.visible { display: inline-block; }
+</style>
+</head>
+<body>
+
+<div class="carousel" id="carousel">
+  <!-- small indicator that shows when paused -->
+  <div class="pause-indicator" id="pauseIndicator">Paused</div>
+
+  <!-- slides wrapper -->
+  <div class="slides" id="slides">
+    <div class="slide"><img src="https://picsum.photos/id/1015/1200/800" alt="Slide 1"></div>
+    <div class="slide"><img src="https://picsum.photos/id/1016/1200/800" alt="Slide 2"></div>
+    <div class="slide"><img src="https://picsum.photos/id/1025/1200/800" alt="Slide 3"></div>
+    <div class="slide"><img src="https://picsum.photos/id/1035/1200/800" alt="Slide 4"></div>
+    <div class="slide"><img src="https://picsum.photos/id/1043/1200/800" alt="Slide 5"></div>
+  </div>
+
+  <!-- dots -->
+  <div class="dots" id="dots"></div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

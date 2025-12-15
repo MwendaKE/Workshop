@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Movie Search App</title>
+
+<style>
+* { margin:0; padding:0; box-sizing:border-box; font-family: Arial, sans-serif; }
+body { background:#f0f0f0; display:flex; justify-content:center; padding:20px; }
+.container { max-width:900px; width:100%; }
+h2 { text-align:center; margin-bottom:20px; }
+
+.search-box { display:flex; flex-wrap: wrap; gap:10px; margin-bottom:20px; }
+input[type="text"], select { flex:1; padding:12px; font-size:16px; border-radius:8px; border:1px solid #ccc; }
+button { padding:12px 20px; border:none; border-radius:8px; background:#0288d1; color:white; cursor:pointer; font-size:16px; }
+
+.movies { display:grid; grid-template-columns:repeat(auto-fit,minmax(180px,1fr)); gap:15px; }
+.movie-card { background:white; border-radius:12px; box-shadow:0 4px 8px rgba(0,0,0,0.1); text-align:center; cursor:pointer; overflow:hidden; transition: transform 0.2s; }
+.movie-card:hover { transform:scale(1.05); }
+.movie-card img { width:100%; height:270px; object-fit:cover; }
+.movie-card h4 { margin:10px 0 5px 0; }
+.movie-card p { font-size:14px; margin-bottom:10px; padding:0 5px; }
+
+/* Pagination */
+.pagination { text-align:center; margin:20px 0; }
+.pagination button { margin:0 5px; padding:8px 12px; border:none; border-radius:5px; background:#0288d1; color:white; cursor:pointer; }
+.pagination button.disabled { background:#ccc; cursor:not-allowed; }
+
+/* Modal */
+.modal { display:none; position:fixed; z-index:1000; left:0; top:0; width:100%; height:100%; overflow:auto; background:rgba(0,0,0,0.7); justify-content:center; align-items:center; }
+.modal-content { background:white; padding:20px; border-radius:12px; max-width:600px; width:90%; position:relative; text-align:center; }
+.close { position:absolute; right:15px; top:10px; font-size:24px; cursor:pointer; }
+
+/* Favorites */
+#favorites { margin-top:30px; }
+.favorite-card { display:flex; gap:10px; background:#e0f2f1; padding:10px; border-radius:10px; align-items:center; }
+.favorite-card img { width:60px; height:80px; object-fit:cover; border-radius:5px; }
+.favorite-card button { padding:5px 10px; border:none; border-radius:5px; background:#d32f2f; color:white; cursor:pointer; }
+
+@media(max-width:600px){ .movie-card img { height:220px; } }
+</style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Movie Search App</h2>
+
+    <div class="search-box">
+        <input type="text" id="searchInput" placeholder="Search for a movie...">
+        <select id="typeFilter">
+            <option value="">All Types</option>
+            <option value="movie">Movie</option>
+            <option value="series">Series</option>
+            <option value="episode">Episode</option>
+        </select>
+        <input type="number" id="yearFilter" placeholder="Year" min="1900" max="2099">
+        <button id="searchBtn">Search</button>
+    </div>
+
+    <div class="movies" id="moviesContainer"></div>
+
+    <div class="pagination" id="pagination"></div>
+
+    <h3>Favorites</h3>
+    <div id="favorites"></div>
+</div>
+
+<!-- Modal -->
+<div class="modal" id="movieModal">
+    <div class="modal-content">
+        <span class="close" id="modalClose">&times;</span>
+        <h3 id="modalTitle"></h3>
+        <img id="modalPoster" src="" alt="Movie Poster" style="width:50%; margin:10px 0;">
+        <p id="modalYear"></p>
+        <p id="modalGenre"></p>
+        <p id="modalPlot"></p>
+        <p id="modalDirector"></p>
+        <p id="modalActors"></p>
+        <button id="addFavoriteBtn">Add to Favorites</button>
+    </div>
+</div>
+
+<script src="movies.js"></script>
+
+</body>
+</html>

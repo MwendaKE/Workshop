@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Quote Generator with Tabs</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 50px;
+        }
+
+        /* --- Tab container --- */
+        .tabs {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+
+        /* --- Individual tab buttons --- */
+        .tab {
+            padding: 10px 20px;
+            cursor: pointer;
+            border: 1px solid #333;
+            margin: 0 5px;
+            border-radius: 5px;
+            background-color: #eee;
+        }
+
+        /* --- Active tab style --- */
+        .active {
+            background-color: #4CAF50;
+            color: white;
+        }
+
+        #quote {
+            font-size: 20px;
+            font-style: italic;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<h2>Quote Generator</h2>
+
+<div class="tabs">
+    <div class="tab active" onclick="switchTab('motivation')">Motivation</div>
+    <div class="tab" onclick="switchTab('life')">Life</div>
+    <div class="tab" onclick="switchTab('success')">Success</div>
+</div>
+
+<p id="quote"></p>
+
+<script src="app.js"></script>
+</body>
+</html>

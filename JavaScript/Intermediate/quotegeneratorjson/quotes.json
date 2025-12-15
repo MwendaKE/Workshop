@@ -1,0 +1,62 @@
+{
+    "motivation": [
+        {"quote": "Believe in yourself.", "author": "Anonymous"},
+        {"quote": "You are stronger than you think.", "author": "Anonymous"},
+        {"quote": "Push harder than yesterday.", "author": "Anonymous"},
+        {"quote": "Dream it. Wish it. Do it.", "author": "Anonymous"},
+        {"quote": "Do something today that your future self will thank you for.", "author": "Anonymous"},
+        {"quote": "Don't stop when you're tired. Stop when you're done.", "author": "Anonymous"},
+        {"quote": "Little things make big days.", "author": "Anonymous"},
+        {"quote": "Success doesn't just find you. You have to go get it.", "author": "Anonymous"},
+        {"quote": "It's going to be hard, but hard does not mean impossible.", "author": "Anonymous"},
+        {"quote": "Keep going. Everything you need will come to you at the perfect time.", "author": "Anonymous"}
+    ],
+    "life": [
+        {"quote": "Life is what happens when you're busy making other plans.", "author": "John Lennon"},
+        {"quote": "In the middle of every difficulty lies opportunity.", "author": "Albert Einstein"},
+        {"quote": "Life is short. Smile while you still have teeth.", "author": "Mallory Hopkins"},
+        {"quote": "Do what you can with what you have, where you are.", "author": "Theodore Roosevelt"},
+        {"quote": "The purpose of life is a life of purpose.", "author": "Robert Byrne"},
+        {"quote": "Happiness is not something ready-made. It comes from your own actions.", "author": "Dalai Lama"},
+        {"quote": "The best way to predict your future is to create it.", "author": "Abraham Lincoln"},
+        {"quote": "Life is really simple, but we insist on making it complicated.", "author": "Confucius"},
+        {"quote": "Turn your wounds into wisdom.", "author": "Oprah Winfrey"},
+        {"quote": "Life is either a daring adventure or nothing at all.", "author": "Helen Keller"}
+    ],
+    "success": [
+        {"quote": "Success is not final; failure is not fatal: It is the courage to continue that counts.", "author": "Winston Churchill"},
+        {"quote": "Don’t be afraid to give up the good to go for the great.", "author": "John D. Rockefeller"},
+        {"quote": "I find that the harder I work, the more luck I seem to have.", "author": "Thomas Jefferson"},
+        {"quote": "Success usually comes to those who are too busy to be looking for it.", "author": "Henry David Thoreau"},
+        {"quote": "Opportunities don't happen. You create them.", "author": "Chris Grosser"},
+        {"quote": "Don't wait for opportunity. Create it.", "author": "George Bernard Shaw"},
+        {"quote": "The secret of success is to do the common thing uncommonly well.", "author": "John D. Rockefeller"},
+        {"quote": "Action is the foundational key to all success.", "author": "Pablo Picasso"},
+        {"quote": "Success is the sum of small efforts repeated day in and day out.", "author": "Robert Collier"},
+        {"quote": "Great things never come from comfort zones.", "author": "Anonymous"}
+    ],
+    "happiness": [
+        {"quote": "Happiness is not something ready-made. It comes from your own actions.", "author": "Dalai Lama"},
+        {"quote": "The purpose of our lives is to be happy.", "author": "Dalai Lama"},
+        {"quote": "Happiness depends upon ourselves.", "author": "Aristotle"},
+        {"quote": "Count your age by friends, not years. Count your life by smiles, not tears.", "author": "John Lennon"},
+        {"quote": "Happiness is a warm puppy.", "author": "Charles Schulz"},
+        {"quote": "The most important thing is to enjoy your life—to be happy—it's all that matters.", "author": "Audrey Hepburn"},
+        {"quote": "Happiness is when what you think, what you say, and what you do are in harmony.", "author": "Mahatma Gandhi"},
+        {"quote": "For every minute you are angry you lose sixty seconds of happiness.", "author": "Ralph Waldo Emerson"},
+        {"quote": "Happiness is not in the mere possession of money; it lies in the joy of achievement.", "author": "Franklin D. Roosevelt"},
+        {"quote": "Be happy for this moment. This moment is your life.", "author": "Omar Khayyam"}
+    ],
+    "wisdom": [
+        {"quote": "The only true wisdom is in knowing you know nothing.", "author": "Socrates"},
+        {"quote": "Turn your wounds into wisdom.", "author": "Oprah Winfrey"},
+        {"quote": "The fool doth think he is wise, but the wise man knows himself to be a fool.", "author": "William Shakespeare"},
+        {"quote": "Knowing others is intelligence; knowing yourself is true wisdom.", "author": "Lao Tzu"},
+        {"quote": "Wisdom begins in wonder.", "author": "Socrates"},
+        {"quote": "It is not the man who has too little, but the man who craves more, that is poor.", "author": "Seneca"},
+        {"quote": "Do not take life too seriously. You will never get out of it alive.", "author": "Elbert Hubbard"},
+        {"quote": "The invariable mark of wisdom is to see the miraculous in the common.", "author": "Ralph Waldo Emerson"},
+        {"quote": "Knowledge speaks, but wisdom listens.", "author": "Jimi Hendrix"},
+        {"quote": "The wise man does at once what the fool does finally.", "author": "Niccolo Machiavelli"}
+    ]
+}

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Product Search & Sort</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            max-width: 700px;
+            margin: auto;
+        }
+
+        .controls {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        .product {
+            border: 1px solid #ccc;
+            padding: 12px;
+            margin-bottom: 10px;
+            border-radius: 6px;
+        }
+
+        .product-title {
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        .row {
+            display: flex;
+            gap: 10px;
+        }
+
+        input, select {
+            padding: 8px;
+            flex: 1;
+        }
+
+        @media (max-width: 500px) {
+            .row {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <h2>Product Search & Sort System</h2>
+
+    <div class="controls">
+
+        <!-- Search by name -->
+        <input type="text" id="search" placeholder="Search product...">
+
+        <!-- Price filter -->
+        <div class="row">
+            <input type="number" id="minPrice" placeholder="Min price">
+            <input type="number" id="maxPrice" placeholder="Max price">
+        </div>
+
+        <!-- Sorting -->
+        <select id="sort">
+            <option value="">Sort by…</option>
+            <option value="name">Name (A → Z)</option>
+            <option value="price">Price (Low → High)</option>
+        </select>
+
+    </div>
+
+    <div id="list"></div>
+
+    <script src="app.js"></script>
+</body>
+</html>

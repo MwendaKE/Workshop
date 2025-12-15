@@ -1,0 +1,142 @@
+🧩 What is a Multi-file Program in C++?
+=========================================
+When your program becomes bigger, it’s hard to keep all the code in one file.
+So, we split the program into separate files, each having a specific job.
+This makes your project cleaner, easier to read, and easier to fix.
+
+🧱 The Three Files We Used
+==========================
+We created three files:
+
+1️⃣ main.cpp — The starting point of the program
+-------------
+Think of this as the remote control that starts everything.
+It tells the computer to start the app.
+It creates and shows the main window.
+It runs the program until the user closes it.
+
+👉 You can think of main.cpp as the “brain that starts the engine”.
+
+
+
+2️⃣ mainwindow.h — The blueprint (header file)
+----------------
+This file declares what our main window will have — like a design plan.
+It doesn’t contain real work;
+it just tells C++ what exists in our window, for example:
+What variables the window has (like buttons, lists, etc.)
+What functions exist (like addTask() and removeTask())
+
+💡 Analogy: It’s like an architect’s drawing of a house — not the house itself, just the plan.
+
+
+
+3️⃣ mainwindow.cpp — The real builder (implementation file)
+------------------
+This is where we write the actual code that makes the window work.
+
+Here we say:
+
+How the window looks (layout, buttons, etc.)
+What happens when you click “Add Task”
+What happens when you click “Remove Task”
+
+💡 Analogy: If mainwindow.h is the design,
+mainwindow.cpp is the person actually building the house.
+
+
+⚙️ Why Split Code This Way?
+
+Organization - Easy to find where things are — main.cpp starts the app, mainwindow.h declares things, mainwindow.cpp does the real work.
+Reusability - You can reuse the same class (like MainWindow) in other projects easily.
+Faster compiling - When you change one part, only that file is recompiled — not everything.
+Teamwork - Different people can work on different files at the same time.
+
+🧠 Important Words and Macros in the Code
+=========================================
+🔹 #include
+-----------------
+This means “bring in code from another file or library”.
+
+Example:
+#include <QPushButton>   // Brings the QPushButton class from Qt
+#include "mainwindow.h"  // Brings our custom class we made
+
+So your file can use features from other files.
+
+🔹 #ifndef, #define, #endif
+-------------------------------
+These are header guards — they prevent a file from being included twice.
+
+Example:
+#ifndef MAINWINDOW_H
+#define MAINWINDOW_H
+// ... code ...
+#endif
+
+💡 Think of it like a security guard who says:
+“Wait! We already included this file once, don’t repeat it!”
+Without this, your code could break with “duplicate definition” errors.
+
+🔹 Q_OBJECT
+---------------
+This macro is special to Qt.
+
+It enables Qt’s signal and slot system —
+that’s how Qt buttons “talk” to functions (like when you click).
+
+Without Q_OBJECT, your connect() calls wouldn’t work.
+
+🔹 private slots:
+------------------
+This tells Qt:
+“These are special functions that will be called when something happens.”
+
+For example:
+void addTask();  // Will be called when you click the Add button
+
+🔹 connect(...)
+------------------
+This links a button click to a function.
+
+Example:
+connect(addButton, &QPushButton::clicked, this, &MainWindow::addTask);
+
+This means:
+When the addButton is clicked → run addTask().
+
+🔹 QApplication
+------------------
+This is the manager of your whole app.
+It handles things like:
+
+Drawing windows
+Handling clicks
+Keeping the app running until it’s closed
+You must have exactly one QApplication in every Qt GUI app.
+
+
+🎯 Summary
+=======================================================================================================
+| File             | Role                                        | Example Analogy                    |
+| ---------------- | ------------------------------------------- | ---------------------------------- |
+| `main.cpp`       | Starts the app                              | Turning the key in a car ignition  |
+| `mainwindow.h`   | Declares the class structure                | The architect’s drawing of a house |
+| `mainwindow.cpp` | Builds the interface and adds functionality | The builder constructing the house |
+=======================================================================================================
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

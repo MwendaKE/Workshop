@@ -1,0 +1,16 @@
+When a user “adds an item to the cart,” it doesn’t immediately buy anything. It means:
+
+1. The app stores the item temporarily (in memory, localStorage, or database) as part of the user’s “cart.”
+
+
+2. It usually tracks: item ID, name, price, quantity.
+
+
+3. The cart shows a summary of items the user intends to buy.
+
+
+4. Later, when the user checks out, the app processes these items for payment and order creation.
+
+
+
+In short: “Add to cart” = remember the item for potential purchase.

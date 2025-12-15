@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Currency Converter</title>
+
+    <style>
+        /* ----------- GLOBAL STYLES ----------- */
+        body {
+            font-family: Arial, sans-serif;
+            background: #f2f2f2;
+            padding: 0;
+            margin: 0;
+        }
+
+        /* Main container */
+        .container {
+            max-width: 480px;
+            width: 90%;
+            margin: 30px auto;
+            background: white;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 0 12px rgba(0,0,0,0.1);
+        }
+
+        /* Title */
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        /* Labels */
+        label {
+            display: block;
+            margin-top: 15px;
+            font-weight: bold;
+        }
+
+        /* Inputs + selects (responsive) */
+        input, select {
+            width: 100%;
+            padding: 12px;
+            margin-top: 8px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            font-size: 16px;
+            box-sizing: border-box;
+        }
+
+        /* Output area */
+        #result {
+            margin-top: 20px;
+            padding: 15px;
+            background: #e8f5e9;
+            border-left: 4px solid #4caf50;
+            border-radius: 5px;
+            font-size: 18px;
+        }
+
+        /* Make container spacing better on very small screens */
+        @media (max-width: 400px) {
+            .container {
+                padding: 15px;
+            }
+
+            input, select {
+                padding: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h2>Currency Converter</h2>
+
+        <!-- Amount -->
+        <label for="amount">Amount</label>
+        <input type="number" id="amount" placeholder="Enter amount">
+
+        <!-- From Currency -->
+        <label for="from">From</label>
+        <select id="from"></select>
+
+        <!-- To Currency -->
+        <label for="to">To</label>
+        <select id="to"></select>
+
+        <!-- Output -->
+        <p id="result">Converted amount will appear here.</p>
+    </div>
+
+    <!-- JS -->
+    <script src="app.js"></script>
+
+</body>
+</html>

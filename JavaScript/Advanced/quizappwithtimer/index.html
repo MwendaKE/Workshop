@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Advanced Quiz App</title>
+
+<style>
+* { margin:0; padding:0; box-sizing:border-box; font-family: Arial, sans-serif; }
+body { background:#f0f0f0; display:flex; justify-content:center; padding:20px; }
+.container { max-width:600px; width:100%; background:white; padding:20px; border-radius:12px; box-shadow:0 4px 10px rgba(0,0,0,0.1); }
+
+h2 { text-align:center; margin-bottom:20px; }
+
+/* Quiz */
+.quiz-section { margin-bottom:40px; }
+.category-select { margin-bottom:10px; }
+.category-select select { padding:10px; border-radius:8px; border:1px solid #ccc; font-size:16px; width:100%; }
+.question { font-weight:bold; margin-bottom:10px; }
+.options button { display:block; margin:5px 0; padding:10px; border:none; border-radius:8px; background:#0288d1; color:white; cursor:pointer; width:100%; text-align:left; }
+.options button.correct { background:#388e3c; }
+.options button.wrong { background:#d32f2f; }
+.options button:hover { background:#0277bd; }
+.timer { font-weight:bold; margin-bottom:10px; color:#d32f2f; }
+.score { margin-top:10px; font-weight:bold; }
+.restart { margin-top:10px; padding:10px 20px; background:#fbc02d; border:none; border-radius:8px; cursor:pointer; width:100%; }
+
+@media(max-width:600px){
+    .options button{ font-size:14px; }
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+
+    <h2>Advanced Quiz App</h2>
+
+    <div class="quiz-section">
+        <div class="category-select">
+            <label for="category">Select Category:</label>
+            <select id="category">
+                <option value="">--Choose--</option>
+                <option value="general">General Knowledge</option>
+                <option value="js">JavaScript</option>
+                <option value="html">HTML/CSS</option>
+            </select>
+        </div>
+
+        <div class="timer" id="timer">Time: 60s</div>
+        <div id="questionContainer"></div>
+        <div class="score" id="scoreContainer"></div>
+        <button class="restart" id="restartBtn">Restart Quiz</button>
+    </div>
+
+</div>
+
+<script src="quizapp.js"></script>
+</body>
+</html>

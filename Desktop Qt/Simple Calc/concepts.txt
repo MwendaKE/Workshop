@@ -1,0 +1,80 @@
+🧮 App 1: Simple Calculator (Beginner Level)
+=============================================
+🎯 What You’ll Learn
+
+Setting up a QWidget window
+Using QGridLayout
+Adding QPushButton and QLineEdit
+Connecting signals and slots (the most important Qt concept)
+Basic event handling
+
+
+💡 Concepts You Learned
+========================
+QApplication – starts the GUI event loop
+QWidget – base class for windows
+QGridLayout – organizes widgets in rows/columns
+connect() – links user actions to code functions
+QScriptEngine – executes math expressions safely
+
+🧠 What You Learned from This Example:
+==========================================================================================================
+| Concept         | Description                                                                          |
+| --------------- | ------------------------------------------------------------------------------------ |
+| `QApplication`  | Manages the whole GUI app — needed for any Qt GUI.                                   |
+| `QWidget`       | The base class for windows, buttons, text boxes, etc.                                |
+| `QGridLayout`   | Controls widget placement neatly in rows/columns.                                    |
+| `QPushButton`   | Interactive button users can click.                                                  |
+| `QLineEdit`     | Single-line text box (used as calculator display).                                   |
+| `connect()`     | The signal-slot mechanism that connects user actions (signals) to functions (slots). |
+| `QScriptEngine` | Evaluates math expressions (like a built-in calculator brain).                       |
+==========================================================================================================
+
+
+Compile:
+--------
+g++ -fPIC main.cpp -o app `pkg-config --cflags --libs Qt5Widgets Qt5Qml`
+
+
+🧠 Why this works:
+===================
+QJSEngine is the modern replacement for QScriptEngine.
+It’s part of the QtQml module, so we add Qt5Qml in the pkg-config command.
+.evaluate() can calculate any math expression given as a string.
+
+Error:
+=====
+g++ -fPIC main.cpp -o app pkg-config --cflags --libs Qt5Widgets Qt5Qml 
+main.cpp:98:10: fatal error: main.moc: No such file or directory 98 | #include "main.moc" | ^~~~~~~~~~ compilation terminated.
+
+Fixing "fatal error: main.moc"
+=====
+So you must manually tell Qt to generate it before compiling.
+
+✅ Fix: Generate main.moc before compiling
+Run these two commands:
+  moc main.cpp -o main.moc
+  g++ -fPIC main.cpp -o app `pkg-config --cflags --libs Qt5Widgets Qt5Qml`
+
+
+Explanation:
+========
+moc = Qt’s Meta Object Compiler tool.
+It scans your main.cpp for the Q_OBJECT macro and generates code that handles signals, slots, and event systems.
+Then g++ compiles everything normally.
+
+
+🧠 Optional (cleaner method)
+========================
+Alternatively, you can remove the #include "main.moc" line and split your code into two files:
+calculator.h
+main.cpp
+
+Then Qt’s build tools handle MOC automatically.
+But since you want a single-file version (simpler), keep it and just run the moc command above.
+
+
+
+
+
+

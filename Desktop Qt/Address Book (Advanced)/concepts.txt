@@ -1,0 +1,42 @@
+Improvement can be searching/filtering contacts in real-time or exporting contacts to CSV.
+
+AddressBook/
+│
+├── main.cpp                 # Entry point of the app
+├── mainwindow/
+│   ├── mainwindow.h         # Main window class (UI + logic)
+│   ├── mainwindow.cpp
+│
+├── dialogs/
+│   ├── contactdialog.h      # Add/Edit contact dialog header
+│   ├── contactdialog.cpp    # Dialog implementation
+│
+├── models/
+│   ├── contact.h            # Contact struct (data model)
+│
+├── database/
+│   ├── database.h           # DB connection, creation, CRUD helpers
+│   ├── database.cpp
+│
+└── resources/               # Optional: icons/images, CSS
+
+
+How to compile:
+===========
+moc mainwindow/mainwindow.h -o mainwindow/mainwindow.moc.cpp
+moc dialogs/contactdialog.h -o dialogs/contactdialog.moc.cpp
+
+g++ -fPIC -I. \
+main.cpp \
+mainwindow/mainwindow.cpp \
+mainwindow/mainwindow.moc.cpp \
+dialogs/contactdialog.cpp \
+dialogs/contactdialog.moc.cpp \
+database/database.cpp \
+`pkg-config --cflags --libs Qt5Widgets Qt5Sql` \
+-o addressbook
+
+Run:
+====
+./addressbook
+

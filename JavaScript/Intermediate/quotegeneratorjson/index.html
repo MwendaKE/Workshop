@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Quote Generator - Add Quotes</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+        margin: 20px;
+        padding: 0;
+    }
+
+    h2 {
+        font-size: 1.8em;
+    }
+
+    .tabs {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin-bottom: 20px;
+    }
+
+    .tab {
+        padding: 10px 15px;
+        margin: 5px;
+        border-radius: 5px;
+        border: 1px solid #333;
+        background-color: #eee;
+        cursor: pointer;
+        flex: 1 0 100px;
+        text-align: center;
+    }
+
+    .active {
+        background-color: #4CAF50;
+        color: white;
+    }
+
+    #quotes-container {
+        max-width: 600px;
+        margin: 0 auto;
+        text-align: left;
+        padding: 0 10px;
+    }
+
+    .quote {
+        padding: 10px;
+        border-bottom: 1px solid #ccc;
+        margin-bottom: 5px;
+        word-wrap: break-word;
+    }
+
+    .quote-text { color: black; }
+    .quote-author { color: green; font-weight: bold; }
+
+    /* Floating Add button */
+    .add-btn {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        background-color: #4CAF50;
+        color: white;
+        border: none;
+        padding: 15px 20px;
+        font-size: 24px;
+        border-radius: 50%;
+        cursor: pointer;
+        box-shadow: 0px 3px 6px rgba(0,0,0,0.2);
+    }
+
+    /* Modal styling */
+    .modal {
+        display: none; 
+        position: fixed; 
+        z-index: 100; 
+        left: 0;
+        top: 0;
+        width: 100%; 
+        height: 100%; 
+        overflow: auto;
+        background-color: rgba(0,0,0,0.5);
+        padding-top: 50px;
+    }
+
+    .modal-content {
+        background-color: #fefefe;
+        margin: auto;
+        padding: 20px;
+        border-radius: 8px;
+        width: 90%;
+        max-width: 400px;
+    }
+
+    .modal-content input, .modal-content select {
+        width: 100%;
+        padding: 10px;
+        margin: 8px 0;
+        box-sizing: border-box;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+    }
+
+    .modal-content button {
+        background-color: #4CAF50;
+        color: white;
+        padding: 10px;
+        width: 100%;
+        border: none;
+        border-radius: 5px;
+        font-size: 16px;
+        cursor: pointer;
+    }
+
+    @media screen and (max-width: 480px) {
+        .tab { flex: 1 0 40%; font-size: 0.9em; }
+    }
+</style>
+</head>
+<body>
+
+<h2>Quote Generator</h2>
+
+<div class="tabs">
+    <div class="tab active" onclick="switchTab('motivation')">Motivation</div>
+    <div class="tab" onclick="switchTab('life')">Life</div>
+    <div class="tab" onclick="switchTab('success')">Success</div>
+    <div class="tab" onclick="switchTab('happiness')">Happiness</div>
+    <div class="tab" onclick="switchTab('wisdom')">Wisdom</div>
+</div>
+
+<div id="quotes-container"></div>
+
+<!-- Floating Add Button -->
+<button class="add-btn" onclick="openModal()">+</button>
+
+<!-- Modal -->
+<div id="quote-modal" class="modal">
+    <div class="modal-content">
+        <h3>Add New Quote</h3>
+        <input type="text" id="new-quote" placeholder="Enter quote">
+        <input type="text" id="new-author" placeholder="Enter author">
+        <select id="new-category">
+            <option value="motivation">Motivation</option>
+            <option value="life">Life</option>
+            <option value="success">Success</option>
+            <option value="happiness">Happiness</option>
+            <option value="wisdom">Wisdom</option>
+        </select>
+        <button onclick="addQuote()">Add Quote</button>
+    </div>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>

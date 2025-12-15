@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Auto Carousel</title>
+    <style>
+        /* --- Container for the slider --- */
+        .slider {
+            width: 400px;               /* Slider width */
+            height: 250px;              /* Slider height */
+            overflow: hidden;           /* Hide images outside the box */
+            margin: 20px auto;          /* Center on the page */
+            border-radius: 10px;
+        }
+
+        /* --- All images stay inside this wrapper --- */
+        .slides {
+            display: flex;              /* Place images in one row */
+            width: 100%;
+            height: 100%;
+            transition: transform 0.5s; /* Smooth movement */
+        }
+
+        /* --- Each image takes full slider space --- */
+        .slides img {
+            width: 400px;
+            height: 250px;
+            object-fit: cover;
+        }
+    </style>
+</head>
+<body>
+
+<h2 style="text-align:center;">Auto Sliding Carousel</h2>
+
+<div class="slider">
+    <div class="slides" id="slides">
+        <img src="https://picsum.photos/id/1015/400/250">
+        <img src="https://picsum.photos/id/1016/400/250">
+        <img src="https://picsum.photos/id/1025/400/250">
+        <img src="https://picsum.photos/id/1035/400/250">
+    </div>
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>

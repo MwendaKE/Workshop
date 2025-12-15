@@ -1,0 +1,38 @@
+{
+  "general": [
+    { "question": "What is the capital of France?", "options": ["Paris","London","Berlin","Madrid"], "answer": "Paris" },
+    { "question": "Which planet is known as the Red Planet?", "options": ["Mars","Earth","Jupiter","Venus"], "answer": "Mars" },
+    { "question": "How many continents are there?", "options": ["5","6","7","8"], "answer": "7" },
+    { "question": "What is the largest ocean?", "options": ["Atlantic","Indian","Pacific","Arctic"], "answer": "Pacific" },
+    { "question": "Who wrote 'Hamlet'?", "options": ["Shakespeare","Hemingway","Tolstoy","Dante"], "answer": "Shakespeare" },
+    { "question": "Which gas do plants absorb?", "options": ["Oxygen","CO2","Nitrogen","Hydrogen"], "answer": "CO2" },
+    { "question": "Which country is famous for the pyramids?", "options": ["Egypt","Mexico","India","China"], "answer": "Egypt" },
+    { "question": "Which element has symbol H?", "options": ["Helium","Hydrogen","Hafnium","Holmium"], "answer": "Hydrogen" },
+    { "question": "Which is the largest planet?", "options": ["Earth","Mars","Jupiter","Saturn"], "answer": "Jupiter" },
+    { "question": "Which continent has the most countries?", "options": ["Asia","Africa","Europe","South America"], "answer": "Africa" }
+  ],
+  "js": [
+    { "question": "Which symbol is used for comments in JS?", "options": ["//","<!--","/*","**"], "answer": "//" },
+    { "question": "Which method converts JSON to JS object?", "options": ["JSON.parse","JSON.stringify","JSON.toObject","JSON.convert"], "answer": "JSON.parse" },
+    { "question": "Which keyword declares a constant?", "options": ["var","let","const","constant"], "answer": "const" },
+    { "question": "Which function prints to console?", "options": ["console.log()","print()","echo()","log()"], "answer": "console.log()" },
+    { "question": "Which operator is for strict equality?", "options": ["==","===","=","!=="], "answer": "===" },
+    { "question": "Which keyword creates a block-scoped variable?", "options": ["var","let","const","scope"], "answer": "let" },
+    { "question": "How do you create an array?", "options": ["[]","{}","()","<>"], "answer": "[]" },
+    { "question": "Which is NOT a JS data type?", "options": ["Number","String","Boolean","Character"], "answer": "Character" },
+    { "question": "Which method adds an item to the end of an array?", "options": ["push()","pop()","shift()","unshift()"], "answer": "push()" },
+    { "question": "Which method removes the last element from an array?", "options": ["push()","pop()","shift()","unshift()"], "answer": "pop()" }
+  ],
+  "html": [
+    { "question": "HTML stands for?", "options": ["Hyper Text Markup Language","Home Tool Markup Language","Hyperlink Text Markup","High Text Markup Language"], "answer": "Hyper Text Markup Language" },
+    { "question": "Tag for an image?", "options": ["<img>","<image>","<pic>","<src>"], "answer": "<img>" },
+    { "question": "CSS stands for?", "options": ["Central Style Sheets","Cascading Style Sheets","Colorful Style Sheets","Computer Style Sheets"], "answer": "Cascading Style Sheets" },
+    { "question": "Tag for hyperlink?", "options": ["<a>","<link>","<href>","<url>"], "answer": "<a>" },
+    { "question": "Which attribute sets image source?", "options": ["src","href","link","source"], "answer": "src" },
+    { "question": "Which tag defines a table row?", "options": ["<tr>","<td>","<table>","<th>"], "answer": "<tr>" },
+    { "question": "Tag for table header?", "options": ["<th>","<tr>","<td>","<header>"], "answer": "<th>" },
+    { "question": "Tag for list item?", "options": ["<li>","<ul>","<ol>","<list>"], "answer": "<li>" },
+    { "question": "Tag for paragraph?", "options": ["<p>","<para>","<text>","<div>"], "answer": "<p>" },
+    { "question": "Tag for bold text?", "options": ["<b>","<strong>","<bold>","<em>"], "answer": "<b>" }
+  ]
+}

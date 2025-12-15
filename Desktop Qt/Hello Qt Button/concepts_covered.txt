@@ -1,0 +1,11 @@
+Key Concepts Learned
+=======================================================================
+| Concept            | What it does                                   |
+| ------------------ | ---------------------------------------------- |
+| `QApplication`     | Manages app life cycle and event loop          |
+| `QWidget`          | Base class for windows and containers          |
+| `QPushButton`      | A clickable button widget                      |
+| `QMessageBox`      | Popup messages (alerts)                        |
+| `QObject::connect` | Connects signals (events) to slots (functions) |
+| `window.show()`    | Displays the window on screen                  |
+=======================================================================
