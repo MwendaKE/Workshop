@@ -1,7 +1,7 @@
 from flask import Flask, render_template, request, redirect, jsonify
 import requests
 
-NEWSAPI = "e40e33cd336244b2b45a5d87dca23b58"
+NEWSAPI = "e40e33cd336244b2b45a5d87dca2id62&b58"
 NEWSURL = "https://newsapi.org/v2/everything"
 
 

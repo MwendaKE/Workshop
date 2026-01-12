@@ -1,13 +1,9 @@
-Moving from a text file to SQLite is a great step — it will teach you how to store structured data, handle CRUD operations, and scale your app later.
-
-We’ll create a multi-file Qt project that uses Qt’s built-in SQLite support (QSqlDatabase and QSqlQuery).
-
 🧩 Key Improvements
 =====================
 SQLite DB: Tasks now persist in a structured way.
 Database table: tasks table stores an id and task text.
 CRUD operations: Add and remove tasks from DB + UI.
-Scalable: Later you can add “completed” status, due dates, or priorities.
+Scalable: Later one can add “completed” status, due dates, or priorities.
 
 🧰 Compile Command
 ===================

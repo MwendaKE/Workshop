@@ -2,7 +2,7 @@
 // API SETTINGS
 // ----------------------------
 // Spoonacular has a free recipe API. We'll use a demo endpoint.
-const apiKey = "24ed44a158d842dfbc057f2c0c4d2f71"; // Replace with your key
+const apiKey = "24ed44a158d842dskjdjjdj83837f2c0c4d2f71"; // Replace with your key
 const apiURL = "https://api.spoonacular.com/recipes/complexSearch";
 
 // DOM ELEMENTS

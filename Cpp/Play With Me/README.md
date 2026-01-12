@@ -1,1 +1,0 @@
-A kid's  explanation of what we mean by a header and an implementation file. Using multiple files when coding in C++.
