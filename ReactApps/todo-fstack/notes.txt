@@ -1,0 +1,197 @@
+📌 So we will build this as a full stack project
+
+==========================================
+⭐ Full Todo App (React + Django + SQLite)
+==========================================
+We will call this project: todo-crud-fullstack
+
+Here is what we will build:
+
+React (frontend):
+-----------------
+Show all todos
+Add a todo
+Update a todo
+Delete a todo
+
+Django / Flask (backend):
+------------------------
+Expose 4 API routes:
+
+GET /todos/
+POST /todos/
+PUT /todos/<id>/
+DELETE /todos/<id>/
+Use SQLite as the real database
+Use Django REST Framework (very easy)
+
+=====================================
+⭐ PHASE 1 — BACKEND (Flask + SQLite)
+=====================================
+We begin with the backend because React will consume its API.
+
+✅ STEP 1: Create Backend Folder
+
+In your terminal:
+
+mkdir todo-fstack
+cd todo-fstack
+mkdir backend
+cd backend
+
+-----------------------
+todo-fstack/
+│
+├── backend/
+│   ├── app.py
+│   ├── models.py
+│   ├── database.db  ← created automatically
+│   └── __init__.py
+
+----------------------
+
+✅ STEP 2 — Install Packages
+-----------------------------
+In your backend folder:
+
+pip install flask flask-cors flask-sqlalchemy
+
+We use flask-cors so React can talk to Flask.
+
+
+✅ STEP 3: Create SQLite Database File
+-------------------------------------
+Create the file:
+
+touch database.db
+
+
+✅ STEP 4: Create models.py
+----------------------------
+This creates our SQLite table.
+
+Create:
+
+nano models.py
+
+
+✅ STEP 5: Create app.py
+------------------------
+This file exposes API routes for CRUD.
+
+
+✅ STEP 6: Run the Flask Backend
+---------------------------------
+python3 app.py
+
+You should see:
+
+Running on http://127.0.0.1:5000
+
+So your API is working.
+
+You can test:
+
+http://127.0.0.1:5000/todos
+
+------------------------
+ PROJECT STRUCTURE
+-----------------------
+todo-fstack/
+│
+├── backend/
+│   ├── app.py
+│   ├── models.py
+│   ├── database.db  ← created automatically
+│   └── __init__.py
+│
+└── frontend/
+
+----------------------
+
+🎉 BACKEND DONE (with SQLAlchemy)
+
+=====================================
+⭐ PHASE 2 — FRONTEND (Build the React Frontend (Full CRUD))
+=====================================
+
+✅ STEP 1 — Create the React project
+------------------------------------
+Inside todo-fstack:
+
+cd todo-fstack
+npm create vite@latest frontend
+
+Choose:
+
+React
+JavaScript
+
+Then:
+
+cd frontend
+npm install
+
+Install axios (for API requests):
+
+npm install axios
+
+✅ STEP 2 — Frontend folder structure
+-------------------------------------
+Your frontend will look like:
+
+frontend/
+│
+├── src/
+│   ├── App.jsx
+│   ├── TodoItem.jsx
+│   └── main.jsx
+
+
+We will create App.jsx and TodoItem.jsx.
+
+✅ STEP 3 — Write App.jsx (Main UI)
+-----------------------------------
+Open:
+
+src/App.jsx
+
+
+✅ STEP 4 — TodoItem.jsx (Each Todo)
+------------------------------------
+Create:
+
+src/TodoItem.jsx
+
+
+✅ STEP 5 — Run Frontend
+-----------------------
+In frontend:
+
+npm run dev
+***********
+In backend (ensure server is running):
+
+python3 app.py
+**************
+
+=============================================
+🎉 DONE — FULL REACT + FLASK + SQLITE CRUD APP
+=============================================
+We have:
+
+Full-stack React frontend
+Flask API backend
+SQLite database with SQLAlchemy
+Full CRUD (Create, Read, Update, Delete)
+Clean, simple beginner-friendly code
+
+Next:
+
+✅ Better UI
+✅ Filters (show completed / incomplete)
+✅ Search
+✅ Edit todo text
+✅ Pagination
+✅ Deploy backend + frontend
+
